@@ -2,6 +2,19 @@
 
 A Number-Spinner based-on jQuery, Support Keyboard operations and continuous changing.
 
+## Basic usage, it's very simple
+```html
+<!-- // ref javascript file -->
+<script src="dist/jquery.spinner.min.js"></script>
+
+<!-- // spinner plugin DOM -->
+<div data-trigger="spinner">
+  <a href="javascript:;" data-spin="down">-</a>
+  <input type="text" value="1" data-rule="quantity">
+  <a href="javascript:;" data-spin="up">+</a>
+</div>
+```
+
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 

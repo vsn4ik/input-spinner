@@ -1,7 +1,7 @@
 {
   "name": "spinner",
   "title": "jQuery spinner",
-  "description": "a number-spinner, number-steps based-on jQuery",
+  "description": "A Number-Spinner based-on jQuery, Support Keyboard operations and continuous changing.",
   "version": "0.1.0",
   "homepage": "https://github.com/xixilive/jquery-spinner",
   "author": {
@@ -23,5 +23,5 @@
   "dependencies": {
     "jquery": ">= 1.6"
   },
-  "keywords": ["spinner", "number-steps"]
+  "keywords": ["spinner", "number-steps", "number-spinner", "continuous"]
 }
