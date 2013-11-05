@@ -4,6 +4,7 @@
   "description": "A Number-Spinner based-on jQuery, Support Keyboard operations and continuous changing.",
   "version": "0.1.0",
   "homepage": "https://github.com/xixilive/jquery-spinner",
+  "demo": "http://xixilive.github.io/jquery-spinner",
   "author": {
     "name": "xixilive",
     "email": "xixilive@gmail.com",
