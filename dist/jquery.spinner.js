@@ -1,4 +1,4 @@
-/*! jQuery spinner - v0.1.0 - 2013-11-18
+/*! jQuery spinner - v0.1.4 - 2013-11-18
 * https://github.com/xixilive/jquery-spinner
 * Copyright (c) 2013 xixilive; Licensed MIT */
 (function($){
@@ -14,6 +14,7 @@
     this.$el
       .on('focus.spinner', $.proxy(function(e){
         e.preventDefault();
+        $(document).trigger('mouseup.spinner');
         this.oldValue = this.value();
       }, this))
       .on('change.spinner', $.proxy(function(e){
@@ -133,6 +134,7 @@
 
     spin: function(e){
       var dir = $(e.currentTarget).data('spin');
+      $(document).trigger('mouseup.spinner');
       switch(e.type){
         case 'click':
           e.preventDefault();

@@ -19,6 +19,7 @@
     this.$el
       .on('focus.spinner', $.proxy(function(e){
         e.preventDefault();
+        $(document).trigger('mouseup.spinner');
         this.oldValue = this.value();
       }, this))
       .on('change.spinner', $.proxy(function(e){
@@ -138,6 +139,7 @@
 
     spin: function(e){
       var dir = $(e.currentTarget).data('spin');
+      $(document).trigger('mouseup.spinner');
       switch(e.type){
         case 'click':
           e.preventDefault();
