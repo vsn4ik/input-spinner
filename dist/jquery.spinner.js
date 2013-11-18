@@ -1,4 +1,4 @@
-/*! jQuery spinner - v0.1.0 - 2013-11-05
+/*! jQuery spinner - v0.1.0 - 2013-11-18
 * https://github.com/xixilive/jquery-spinner
 * Copyright (c) 2013 xixilive; Licensed MIT */
 (function($){
@@ -140,7 +140,7 @@
           break;
 
         case 'mousedown':
-          if(e.button === 0){
+          if(e.which === 1){
             this.spinInterval = setInterval($.proxy(function(dir){
               this.spinning.spin(dir);
             }, this, $(e.currentTarget).data('spin')), 100);

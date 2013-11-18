@@ -145,7 +145,7 @@
           break;
 
         case 'mousedown':
-          if(e.button === 0){
+          if(e.which === 1){
             this.spinInterval = setInterval($.proxy(function(dir){
               this.spinning.spin(dir);
             }, this, $(e.currentTarget).data('spin')), 100);
