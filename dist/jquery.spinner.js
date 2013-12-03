@@ -1,7 +1,7 @@
-/*! jQuery spinner - v0.1.4 - 2013-11-18
+/*! jQuery spinner - v0.1.5 - 2013-12-03
 * https://github.com/xixilive/jquery-spinner
 * Copyright (c) 2013 xixilive; Licensed MIT */
-(function($){
+;(function($){
   "use strict";
 
   var spinningTimer;
@@ -65,6 +65,7 @@
         return this.numeric(this.$el.val());
       }
       v = this.numeric(v);
+      
       var valid = this.validate(v);
       if(valid !== 0){
         v = (valid === -1) ? this.min : this.max;
@@ -112,6 +113,7 @@
       .on('mousedown.spinner', "[data-spin='up'],[data-spin='down']", $.proxy(this.spin, this));
 
     $(document).on('mouseup.spinner', $.proxy(function(){
+      clearTimeout(this.spinTimeout);
       clearInterval(this.spinInterval);
     }, this));
 
@@ -134,7 +136,6 @@
 
     spin: function(e){
       var dir = $(e.currentTarget).data('spin');
-      $(document).trigger('mouseup.spinner');
       switch(e.type){
         case 'click':
           e.preventDefault();
@@ -143,9 +144,7 @@
 
         case 'mousedown':
           if(e.which === 1){
-            this.spinInterval = setInterval($.proxy(function(dir){
-              this.spinning.spin(dir);
-            }, this, $(e.currentTarget).data('spin')), 100);
+            this.spinTimeout = setTimeout($.proxy(this.beginSpin, this, dir), 300);
           }
           break;
       }
@@ -176,6 +175,10 @@
       }else{
         this.$spinning.off(t);
       }
+    },
+
+    beginSpin: function(dir){
+      this.spinInterval = setInterval($.proxy(this.spinning.spin, this.spinning, dir), 100);
     }
   };
 

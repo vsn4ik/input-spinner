@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  */
 
-(function($){
+;(function($){
   "use strict";
 
   var spinningTimer;
@@ -70,6 +70,7 @@
         return this.numeric(this.$el.val());
       }
       v = this.numeric(v);
+      
       var valid = this.validate(v);
       if(valid !== 0){
         v = (valid === -1) ? this.min : this.max;
@@ -117,6 +118,7 @@
       .on('mousedown.spinner', "[data-spin='up'],[data-spin='down']", $.proxy(this.spin, this));
 
     $(document).on('mouseup.spinner', $.proxy(function(){
+      clearTimeout(this.spinTimeout);
       clearInterval(this.spinInterval);
     }, this));
 
@@ -139,7 +141,6 @@
 
     spin: function(e){
       var dir = $(e.currentTarget).data('spin');
-      $(document).trigger('mouseup.spinner');
       switch(e.type){
         case 'click':
           e.preventDefault();
@@ -148,9 +149,7 @@
 
         case 'mousedown':
           if(e.which === 1){
-            this.spinInterval = setInterval($.proxy(function(dir){
-              this.spinning.spin(dir);
-            }, this, $(e.currentTarget).data('spin')), 100);
+            this.spinTimeout = setTimeout($.proxy(this.beginSpin, this, dir), 300);
           }
           break;
       }
@@ -181,6 +180,10 @@
       }else{
         this.$spinning.off(t);
       }
+    },
+
+    beginSpin: function(dir){
+      this.spinInterval = setInterval($.proxy(this.spinning.spin, this.spinning, dir), 100);
     }
   };
 
