@@ -53,4 +53,15 @@
     strictEqual(this.spinner.value(), 1);
   });
 
+  test('no spinning on disabled input', 3, function() {
+      this.spinner.spinning.$el.attr('disabled', 'disabled');
+      strictEqual(this.spinner.value(), 1);
+      this.spinUp.click();
+      strictEqual(this.spinner.value(), 1);
+      this.spinner.spinning.$el.val(2);
+      this.spinDown.click();
+      strictEqual(this.spinner.value(), 2);
+      this.spinner.spinning.$el.removeAttr('disabled', 'disabled');
+  });
+
 }(jQuery));

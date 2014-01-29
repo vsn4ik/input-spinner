@@ -54,6 +54,10 @@
 
   Spinning.prototype = {
     spin: function(dir){
+      if (this.$el.attr('disabled') === 'disabled') {
+          return;
+      }
+
       this.oldValue = this.value();
       switch(dir){
         case 'up':

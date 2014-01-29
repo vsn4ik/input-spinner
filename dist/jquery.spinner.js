@@ -1,6 +1,6 @@
-/*! jQuery spinner - v0.1.5 - 2013-12-03
+/*! jQuery spinner - v0.1.5 - 2014-01-29
 * https://github.com/xixilive/jquery-spinner
-* Copyright (c) 2013 xixilive; Licensed MIT */
+* Copyright (c) 2014 xixilive; Licensed MIT */
 ;(function($){
   "use strict";
 
@@ -49,6 +49,10 @@
 
   Spinning.prototype = {
     spin: function(dir){
+      if (this.$el.attr('disabled') === 'disabled') {
+          return;
+      }
+
       this.oldValue = this.value();
       switch(dir){
         case 'up':
