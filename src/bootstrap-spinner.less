@@ -1,18 +1,19 @@
-.spinner{
-  .add-on{
-    padding: 2px;
-
+.spinner.input-group{
+  .input-group-addon{
     a.spin-up, a.spin-down{
       height: 10px;
+      width: 10px;
+      font-size: 14px;
       overflow: hidden;
       display: block;
       text-align: center;
+      text-decoration: none;
       position: relative;
       color: #999;
 
       .icon-sort-down{
         position: relative;
-        top: -9px;
+        top: -6px;
       }
 
       &:hover{
@@ -22,9 +23,24 @@
   }
 
   input{
-    width: 4em;
     text-align: center;
-    padding-top: 2px;
-    padding-bottom: 2px;
+  }
+
+  &.input-group-lg{
+    .input-group-addon{
+      a.spin-up, a.spin-down{
+        font-size: 16px;
+        height: 12px;
+      }
+    }
+  }
+
+  &.input-group-sm{
+    .input-group-addon{
+      a.spin-up, a.spin-down{
+        font-size: 12px;
+        height: 9px;
+      }
+    }
   }
 }

@@ -87,14 +87,14 @@ Usage:
 
 ## Examples
 
-### Work with twitter-bootstrap
+### Work with twitter-bootstrap3
 
 ```html
 <link href="dist/bootstrap-spinner.css" rel="stylesheet">
 
-<div class="input-append spinner" data-trigger="spinner">
+<div class="input-group spinner" data-trigger="spinner">
   <input type="text" value="1" data-rule="quantity">
-  <div class="add-on">
+  <span class="input-group-addon">
     <a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
     <a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
   </div>

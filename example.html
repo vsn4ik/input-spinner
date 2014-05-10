@@ -4,11 +4,11 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Example</title>
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <link href="dist/bootstrap-spinner.css" rel="stylesheet">
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script src="dist/jquery.spinner.js"></script>
     <script type="text/javascript">
     $(function(){
@@ -30,9 +30,9 @@
       </ul>
       <div class="well">
         <h2>Quantity:</h2>
-        <div class="input-append spinner" data-trigger="spinner">
-          <input type="text" value="1" data-rule="quantity">
-          <div class="add-on">
+        <div class="input-group spinner" data-trigger="spinner">
+          <input type="text" class="form-control" value="1" data-rule="quantity">
+          <div class="input-group-addon">
             <a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
             <a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
           </div>
@@ -41,9 +41,9 @@
 
       <div class="well">
         <h2>Currency:</h2>
-        <div class="input-append spinner" data-trigger="spinner">
-          <input type="text" value="1" data-rule="currency">
-          <div class="add-on">
+        <div class="input-group spinner" data-trigger="spinner">
+          <input type="text" class="form-control" value="1" data-rule="currency">
+          <div class="input-group-addon">
             <a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
             <a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
           </div>
@@ -52,9 +52,9 @@
 
       <div class="well">
         <h2>Percent:</h2>
-        <div class="input-append spinner" data-trigger="spinner">
-          <input type="text" value="1" data-rule="percent">
-          <div class="add-on">
+        <div class="input-group spinner" data-trigger="spinner">
+          <input type="text" class="form-control" value="1" data-rule="percent">
+          <div class="input-group-addon">
             <a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
             <a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
           </div>
@@ -63,9 +63,9 @@
 
       <div class="well">
         <h2>Month:</h2>
-        <div class="input-append spinner" data-trigger="spinner">
-          <input type="text" value="1" data-rule="month">
-          <div class="add-on">
+        <div class="input-group spinner" data-trigger="spinner">
+          <input type="text" class="form-control" value="1" data-rule="month">
+          <div class="input-group-addon">
             <a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
             <a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
           </div>
@@ -74,9 +74,9 @@
 
       <div class="well">
         <h2>Customize(even number less than 200):</h2>
-        <div class="input-append spinner" data-trigger="spinner" id="customize-spinner">
-          <input type="text" value="0" data-max="200" data-min="0" data-step="2">
-          <div class="add-on">
+        <div class="input-group spinner" data-trigger="spinner" id="customize-spinner">
+          <input type="text" class="form-control" value="0" data-max="200" data-min="0" data-step="2">
+          <div class="input-group-addon">
             <a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
             <a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
           </div>
@@ -88,14 +88,14 @@
       </div>
 
       <div class="well">
-          <h2>Disabled input:</h2>
-          <div class="input-append spinner" data-trigger="spinner" id="customize-spinner">
-              <input type="text" value="100" data-max="200" data-min="0" data-step="1" disabled="disabled">
-              <div class="add-on">
-                  <a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
-                  <a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
-              </div>
+        <h2>Disabled input:</h2>
+        <div class="input-group spinner" data-trigger="spinner" id="customize-spinner">
+          <input type="text" class="form-control" value="100" data-max="200" data-min="0" data-step="1" disabled="disabled">
+          <div class="input-group-addon">
+            <a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
+            <a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
           </div>
+        </div>
       </div>
 
     </div>
