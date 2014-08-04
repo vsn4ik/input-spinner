@@ -11,8 +11,9 @@
 
   var spinningTimer;
   var Spinning = function(el, options){
+    options || options = {};
     this.$el = el;
-    this.options = $.extend({}, Spinning.rules.defaults, Spinning.rules[options.rule] || {}, options || {});
+    this.options = $.extend({}, Spinning.rules.defaults, Spinning.rules[options.rule] || {}, options);
     this.min = parseFloat(this.options.min) || 0;
     this.max = parseFloat(this.options.max) || 0;
 
