@@ -95,7 +95,12 @@
 
     numeric: function(v){
       v = this.options.precision > 0 ? parseFloat(v, 10) : parseInt(v, 10);
-      return v || this.options.min || 0;
+      // If the variable is a number
+      if (!isNaN(parseFloat(v)) && isFinite(v)) {
+    	  return v;
+      } else {
+    	  return v || this.options.min || 0; 
+      }
     },
 
     validate: function(val){
