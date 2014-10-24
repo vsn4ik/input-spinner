@@ -18,8 +18,8 @@ A Number-Spinner based-on jQuery, Support Keyboard operations and continuous cha
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/xixilive/jquery-spinner/master/dist/spinner.min.js
-[max]: https://raw.github.com/xixilive/jquery-spinner/master/dist/spinner.js
+[min]: https://raw.githubusercontent.com/xixilive/jquery-spinner/bootstrap3/dist/jquery.spinner.min.js
+[max]: https://raw.githubusercontent.com/xixilive/jquery-spinner/bootstrap3/dist/jquery.spinner.js
 
 In your web page:
 
