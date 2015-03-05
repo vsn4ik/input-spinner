@@ -11,7 +11,7 @@
 
   var spinningTimer;
   var Spinning = function(el, options){
-    options || options = {};
+    options = $.extend({}, options);
     this.$el = el;
     this.options = $.extend({}, Spinning.rules.defaults, Spinning.rules[options.rule] || {}, options);
     this.min = parseFloat(this.options.min) || 0;
@@ -60,12 +60,13 @@
       }
 
       this.oldValue = this.value();
+      var step = $.isFunction(this.options.step) ? this.options.step.call(this, dir) : this.options.step;
       switch(dir){
         case 'up':
-          this.value(this.oldValue + Number(this.options.step, 10));
+          this.value(this.oldValue + Number(step, 10));
           break;
         case 'down':
-          this.value(this.oldValue - Number(this.options.step, 10));
+          this.value(this.oldValue - Number(step, 10));
           break;
       }
     },
@@ -98,9 +99,9 @@
       v = this.options.precision > 0 ? parseFloat(v, 10) : parseInt(v, 10);
       // If the variable is a number
       if (!isNaN(parseFloat(v)) && isFinite(v)) {
-    	  return v;
+        return v;
       } else {
-    	  return v || this.options.min || 0; 
+        return v || this.options.min || 0; 
       }
     },
 

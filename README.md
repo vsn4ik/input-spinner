@@ -64,7 +64,7 @@ $("#spinner")
 > the maximum value, default is null.
 
 #### step
-> the changing-value of per-step.
+> the changing-value of per-step, if passed as a function, the function will be called within the spinner object scope.
 
 #### precision
 > the precision of value
@@ -128,4 +128,18 @@ Usage:
     #('#spinner-value').html(newVal);
   });
 </script>
+```
+
+#### pass step options as a function
+``` javascript
+//To skip 0
+$("#spinner").spinner({
+  step: function(dir){
+    //this keyword references the spinner object
+    if((this.oldValue === 1 && dir === 'down') || (this.oldValue === -1 && dir === 'up')){
+      return 2;
+    }
+    return 1;
+  }
+});
 ```

@@ -1,13 +1,14 @@
-/*! jQuery spinner - v0.1.5 - 2014-01-29
+/*! jQuery spinner - v0.1.6 - 2015-03-05
 * https://github.com/xixilive/jquery-spinner
-* Copyright (c) 2014 xixilive; Licensed MIT */
+* Copyright (c) 2015 xixilive; Licensed MIT */
 ;(function($){
   "use strict";
 
   var spinningTimer;
   var Spinning = function(el, options){
+    options = $.extend({}, options);
     this.$el = el;
-    this.options = $.extend({}, Spinning.rules.defaults, Spinning.rules[options.rule] || {}, options || {});
+    this.options = $.extend({}, Spinning.rules.defaults, Spinning.rules[options.rule] || {}, options);
     this.min = parseFloat(this.options.min) || 0;
     this.max = parseFloat(this.options.max) || 0;
 
@@ -54,12 +55,13 @@
       }
 
       this.oldValue = this.value();
+      var step = $.isFunction(this.options.step) ? this.options.step.call(this, dir) : this.options.step;
       switch(dir){
         case 'up':
-          this.value(this.oldValue + Number(this.options.step, 10));
+          this.value(this.oldValue + Number(step, 10));
           break;
         case 'down':
-          this.value(this.oldValue - Number(this.options.step, 10));
+          this.value(this.oldValue - Number(step, 10));
           break;
       }
     },
@@ -90,7 +92,12 @@
 
     numeric: function(v){
       v = this.options.precision > 0 ? parseFloat(v, 10) : parseInt(v, 10);
-      return v || this.options.min || 0;
+      // If the variable is a number
+      if (!isNaN(parseFloat(v)) && isFinite(v)) {
+        return v;
+      } else {
+        return v || this.options.min || 0; 
+      }
     },
 
     validate: function(val){

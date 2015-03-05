@@ -53,6 +53,20 @@
     strictEqual(this.spinner.value(), 1);
   });
 
+  test('pass step as a function', 3, function(){
+    strictEqual(this.spinner.value(), 1);
+    this.spinner.spinning.options.step = function(dir){ //to skip 0
+      if((this.oldValue === 1 && dir === 'down') || (this.oldValue === -1 && dir === 'up')){
+        return 2;
+      }
+      return 1;
+    };
+    this.spinDown.click();
+    strictEqual(this.spinner.value(), -1);
+    this.spinUp.click();
+    strictEqual(this.spinner.value(), 1);
+  });
+
   test('no spinning on disabled input', 3, function() {
       this.spinner.spinning.$el.attr('disabled', 'disabled');
       strictEqual(this.spinner.value(), 1);
