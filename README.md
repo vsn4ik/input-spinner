@@ -135,11 +135,16 @@ Usage:
 //To skip 0
 $("#spinner").spinner({
   step: function(dir){
-    //this keyword references the spinner object
+    //'this' references to the spinner object
     if((this.oldValue === 1 && dir === 'down') || (this.oldValue === -1 && dir === 'up')){
       return 2;
     }
     return 1;
   }
+});
+
+//or use API syntax
+$("#spinner").spinner('step', function(dir){
+  //your logic here
 });
 ```
