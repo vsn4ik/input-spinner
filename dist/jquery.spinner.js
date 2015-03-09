@@ -1,4 +1,4 @@
-/*! jQuery spinner - v0.1.6 - 2015-03-05
+/*! jQuery spinner - v0.1.6 - 2015-03-09
 * https://github.com/xixilive/jquery-spinner
 * Copyright (c) 2015 xixilive; Licensed MIT */
 ;(function($){
@@ -112,12 +112,13 @@
   };
 
   var Spinner = function(el, options){
+    options = $.extend({}, options);
     this.$el = el;
     this.$spinning = $("[data-spin='spinner']", this.$el);
     if(this.$spinning.length === 0){
       this.$spinning = $(":input[type='text']", this.$el);
     }
-    this.spinning = new Spinning(this.$spinning, this.$spinning.data());
+    this.spinning = new Spinning(this.$spinning, $.extend(this.$spinning.data(), options));
 
     this.$el
       .on('click.spinner', "[data-spin='up'],[data-spin='down']", $.proxy(this.spin, this))
@@ -128,7 +129,6 @@
       clearInterval(this.spinInterval);
     }, this));
 
-    options = $.extend({}, options);
     if(options.delay){
       this.delay(options.delay);
     }
@@ -163,7 +163,7 @@
 
     delay: function(ms){
       var delay = parseInt(ms, 10);
-      if(delay > 0){
+      if(delay >= 0){
         this.constructor.delay = delay + 100;
       }
     },
@@ -201,6 +201,9 @@
       }
       if(options === 'delay' || options === 'changed' || options === 'changing'){
         data[options](value);
+      }
+      if(options === 'step' && value){
+        data.spinning.step = value;
       }
       if(options === 'spin' && value){
         data.spinning.spin(value);
