@@ -203,7 +203,7 @@
         data[options](value);
       }
       if(options === 'step' && value){
-        data.spinning.step = value;
+        data.spinning.options.step = value;
       }
       if(options === 'spin' && value){
         data.spinning.spin(value);
