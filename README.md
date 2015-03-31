@@ -93,11 +93,11 @@ Usage:
 <link href="dist/bootstrap-spinner.css" rel="stylesheet">
 
 <div class="input-group spinner" data-trigger="spinner">
-  <input type="text" value="1" data-rule="quantity">
+  <input type="text" value="1" data-rule="quantity" class="form-control">
   <span class="input-group-addon">
     <a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
     <a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
-  </div>
+  </span>
 </div>
 ```
 
