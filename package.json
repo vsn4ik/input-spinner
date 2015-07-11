@@ -7,6 +7,15 @@
   "scripts": {
     "test": "grunt qunit"
   },
+  "bugs": {
+    "url": "http://github.com/xixilive/jquery-spinner/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/xixilive/jquery-spinner/blob/master/LICENSE-MIT"
+    }
+  ],
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-qunit": "~0.2.0",
