@@ -1,0 +1,25 @@
+{
+  "name": "jquery-spinner",
+  "version": "0.1.6",
+  "homepage": "https://github.com/xixilive/jquery-spinner",
+  "authors": [
+    "xixilive <xixilive@gmail.com>"
+  ],
+  "description": "A Number-Spinner based-on jQuery, Support keyboard operations and continuous changing.",
+  "main": "dist/jquery.spinner.min.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "number",
+    "spinner"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
