@@ -22,7 +22,7 @@
     }
   ],
   "dependencies": {
-    "jquery": ">= 1.6"
+    "jquery": ">= 1.7"
   },
   "keywords": ["spinner", "number-steps", "number-spinner", "continuous"]
 }

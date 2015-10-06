@@ -1,45 +1,71 @@
 .spinner.input-group{
   .input-group-addon{
-    a.spin-up, a.spin-down{
+    .spin-up,
+    .spin-down{
       height: 10px;
       width: 10px;
-      font-size: 14px;
       overflow: hidden;
       display: block;
       text-align: center;
-      text-decoration: none;
-      position: relative;
       color: #999;
-
-      .icon-sort-down{
-        position: relative;
-        top: -6px;
-      }
 
       &:hover{
         color: #555;
       }
+
+      .fa{
+        margin-top: -8px;
+        vertical-align: middle;
+      }
+
+      .glyphicon{
+        font-size: 10px;
+        top: -2px;
+      }
+    }
+
+    a.spin-up,
+    a.spin-down{
+      text-decoration: none;
+    }
+
+    button.spin-up,
+    button.spin-down{
+      background: none;
+      border: none;
+      padding: 0;
     }
   }
 
-  input{
-    text-align: center;
-  }
+  &.input-group-sm .input-group-addon{
+    .spin-up,
+    .spin-down{
+      height: 8px;
 
-  &.input-group-lg{
-    .input-group-addon{
-      a.spin-up, a.spin-down{
-        font-size: 16px;
-        height: 12px;
+      .fa{
+        margin-top: -12px;
+      }
+
+      .glyphicon{
+        font-size: 8px;
+        top: -5px;
       }
     }
   }
 
-  &.input-group-sm{
-    .input-group-addon{
-      a.spin-up, a.spin-down{
+  &.input-group-lg .input-group-addon{
+    .spin-up,
+    .spin-down{
+      height: 12px;
+      width: 12px;
+
+      .fa{
+        margin-top: -16px;
+      }
+
+      .glyphicon{
         font-size: 12px;
-        height: 9px;
+        top: -6px;
       }
     }
   }
