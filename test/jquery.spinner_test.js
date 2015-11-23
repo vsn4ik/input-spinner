@@ -75,7 +75,7 @@
       this.spinner.spinning.$el.val(2);
       this.spinDown.click();
       strictEqual(this.spinner.value(), 2);
-      this.spinner.spinning.$el.removeAttr('disabled', 'disabled');
+      this.spinner.spinning.$el.removeAttr('disabled');
   });
 
 }(jQuery));

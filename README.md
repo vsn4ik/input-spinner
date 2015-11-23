@@ -18,8 +18,8 @@ A Number-Spinner based-on jQuery, Support Keyboard operations and continuous cha
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.githubusercontent.com/xixilive/jquery-spinner/bootstrap3/dist/jquery.spinner.min.js
-[max]: https://raw.githubusercontent.com/xixilive/jquery-spinner/bootstrap3/dist/jquery.spinner.js
+[min]: https://raw.githubusercontent.com/xixilive/jquery-spinner/master/dist/jquery.spinner.min.js
+[max]: https://raw.githubusercontent.com/xixilive/jquery-spinner/master/dist/jquery.spinner.js
 
 In your web page:
 
@@ -87,16 +87,16 @@ Usage:
 
 ## Examples
 
-### Work with twitter-bootstrap3
+### Work with Bootstrap 3 and Font Awesome 4
 
 ```html
 <link href="dist/bootstrap-spinner.css" rel="stylesheet">
 
 <div class="input-group spinner" data-trigger="spinner">
-  <input type="text" value="1" data-rule="quantity" class="form-control">
+  <input type="text" class="form-control text-center" value="1" data-rule="quantity">
   <span class="input-group-addon">
-    <a href="javascript:;" class="spin-up" data-spin="up"><i class="icon-sort-up"></i></a>
-    <a href="javascript:;" class="spin-down" data-spin="down"><i class="icon-sort-down"></i></a>
+    <a href="javascript:;" class="spin-up" data-spin="up"><i class="fa fa-caret-up"></i></a>
+    <a href="javascript:;" class="spin-down" data-spin="down"><i class="fa fa-caret-down"></i></a>
   </span>
 </div>
 ```
@@ -131,7 +131,7 @@ Usage:
 ```
 
 #### pass step options as a function
-``` javascript
+```javascript
 //To skip 0
 $("#spinner").spinner({
   step: function(dir){
