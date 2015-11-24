@@ -1,4 +1,4 @@
-/*! jQuery spinner - v0.1.6 - 2015-03-09
+/*! jQuery spinner - v0.1.6 - 2015-11-25
 * https://github.com/xixilive/jquery-spinner
 * Copyright (c) 2015 xixilive; Licensed MIT */
 ;(function($){
@@ -12,24 +12,25 @@
     this.min = parseFloat(this.options.min) || 0;
     this.max = parseFloat(this.options.max) || 0;
 
-    this.$el
-      .on('focus.spinner', $.proxy(function(e){
+    this.$el.on({
+      'focus.spinner': $.proxy(function(e){
         e.preventDefault();
         $(document).trigger('mouseup.spinner');
         this.oldValue = this.value();
-      }, this))
-      .on('change.spinner', $.proxy(function(e){
+      }, this),
+      'change.spinner': $.proxy(function(e){
         e.preventDefault();
         this.value(this.$el.val());
-      }, this))
-      .on('keydown.spinner', $.proxy(function(e){
+      }, this),
+      'keydown.spinner': $.proxy(function(e){
         var dir = {38: 'up', 40: 'down'}[e.which];
         if(dir){
           e.preventDefault();
           this.spin(dir);
         }
-      }, this));
-    
+      }, this)
+    });
+
     //init input value
     this.oldValue = this.value();
     this.value(this.$el.val());
@@ -50,20 +51,15 @@
 
   Spinning.prototype = {
     spin: function(dir){
-      if (this.$el.attr('disabled') === 'disabled') {
-          return;
+      if (this.$el.prop('disabled')) {
+        return;
       }
 
       this.oldValue = this.value();
       var step = $.isFunction(this.options.step) ? this.options.step.call(this, dir) : this.options.step;
-      switch(dir){
-        case 'up':
-          this.value(this.oldValue + Number(step, 10));
-          break;
-        case 'down':
-          this.value(this.oldValue - Number(step, 10));
-          break;
-      }
+      var multipler = dir === 'up' ? 1 : -1;
+
+      this.value(this.oldValue + Number(step, 10) * multipler);
     },
 
     value: function(v){
@@ -121,8 +117,8 @@
     this.spinning = new Spinning(this.$spinning, $.extend(this.$spinning.data(), options));
 
     this.$el
-      .on('click.spinner', "[data-spin='up'],[data-spin='down']", $.proxy(this.spin, this))
-      .on('mousedown.spinner', "[data-spin='up'],[data-spin='down']", $.proxy(this.spin, this));
+      .on('click.spinner', "[data-spin='up'],[data-spin='down']", $.proxy(this, 'spin'))
+      .on('mousedown.spinner', "[data-spin='up'],[data-spin='down']", $.proxy(this, 'spin'));
 
     $(document).on('mouseup.spinner', $.proxy(function(){
       clearTimeout(this.spinTimeout);
@@ -155,7 +151,7 @@
 
         case 'mousedown':
           if(e.which === 1){
-            this.spinTimeout = setTimeout($.proxy(this.beginSpin, this, dir), 300);
+            this.spinTimeout = setTimeout($.proxy(this, 'beginSpin', dir), 300);
           }
           break;
       }
@@ -189,7 +185,7 @@
     },
 
     beginSpin: function(dir){
-      this.spinInterval = setInterval($.proxy(this.spinning.spin, this.spinning, dir), 100);
+      this.spinInterval = setInterval($.proxy(this.spinning, 'spin', dir), 100);
     }
   };
 
@@ -203,7 +199,7 @@
         data[options](value);
       }
       if(options === 'step' && value){
-        data.spinning.options.step = value;
+        data.spinning.step = value;
       }
       if(options === 'spin' && value){
         data.spinning.spin(value);

@@ -7,10 +7,10 @@ Please don't edit files in the `dist` subdirectory as they are generated via Gru
 Regarding code style like indentation and whitespace, **follow the conventions you see used in the source already.**
 
 ### PhantomJS
-While Grunt can run the included unit tests via [PhantomJS](http://phantomjs.org/), this shouldn't be considered a substitute for the real thing. Please be sure to test the `test/*.html` unit test file(s) in _actual_ browsers.
+While Grunt can run the included unit tests via [PhantomJS](http://phantomjs.org), this shouldn't be considered a substitute for the real thing. Please be sure to test the `test/*.html` unit test file(s) in _actual_ browsers.
 
 ## Modifying the code
-First, ensure that you have the latest [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/) installed.
+First, ensure that you have the latest [Node.js](https://nodejs.org) and [npm](https://npmjs.com) installed.
 
 Test that Grunt's CLI is installed by running `grunt --version`.  If the command isn't found, run `npm install -g grunt-cli`.  For more information about installing Grunt, see the [getting started guide](http://gruntjs.com/getting-started).
 

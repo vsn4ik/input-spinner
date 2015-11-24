@@ -1,30 +1,30 @@
 {
   "name": "jquery-spinner",
   "version": "0.0.0-ignored",
-  "engines": {
-    "node": ">= 0.8.0"
-  },
+  "description": "A Number-Spinner based-on jQuery, Support Keyboard operations and continuous changing",
+  "keywords": [
+    "spinner",
+    "number-steps",
+    "number-spinner",
+    "continuous"
+  ],
+  "homepage": "http://vsn4ik.github.com/jquery-spinner",
+  "license": "MIT",
   "main": "dist/jquery.spinner.min.js",
   "scripts": {
     "test": "grunt qunit"
   },
-  "bugs": {
-    "url": "http://github.com/xixilive/jquery-spinner/issues"
+  "engines": {
+    "node": ">= 0.8.0"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/xixilive/jquery-spinner/blob/master/LICENSE-MIT"
-    }
-  ],
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-qunit": "~0.2.0",
+    "grunt": "~0.4.5",
+    "grunt-contrib-clean": "~0.7.0",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-uglify": "~0.2.0",
-    "grunt-contrib-watch": "~0.4.0",
-    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-less": "~0.5.0",
-    "grunt": "~0.4.1"
+    "grunt-contrib-qunit": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.4.0"
   }
 }

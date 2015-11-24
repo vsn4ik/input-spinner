@@ -72,7 +72,7 @@
         return this.numeric(this.$el.val());
       }
       v = this.numeric(v);
-      
+
       var valid = this.validate(v);
       if(valid !== 0){
         v = (valid === -1) ? this.min : this.max;
