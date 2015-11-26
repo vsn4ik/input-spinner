@@ -2,21 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Example</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="dist/bootstrap-spinner.css">
+
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="dist/jquery.spinner.js"></script>
     <script>
-    $(function(){
-      $('#customize-spinner').spinner('changed',function(e, newVal, oldVal){
+    $(function() {
+      $('#customize-spinner').spinner('changed', function(e, newVal, oldVal) {
         $('#old-val').text(oldVal);
         $('#new-val').text(newVal);
       });
-    })
+    });
     </script>
   </head>
   <body>
@@ -74,7 +76,7 @@
       </div>
 
       <div class="well">
-        <h2>Customize(even number less than 200):</h2>
+        <h2>Customize (even number less than 200):</h2>
         <div class="input-group spinner" data-trigger="spinner" id="customize-spinner">
           <input type="text" class="form-control text-center" value="0" data-max="200" data-min="0" data-step="2">
           <div class="input-group-addon">
@@ -136,6 +138,5 @@
         <div>Second <code>.input-group-addon</code>: Glyphicon</div>
       </div>
     </div>
-
   </body>
 </html>
