@@ -15,13 +15,11 @@
   "moduleType": [
     "globals"
   ],
-  "main": "dist/jquery.spinner.min.js",
+  "main": "dist/js/jquery.spinner.js",
   "ignore": [
     "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "CONTRIBUTING.md",
+    "js/tests"
   ],
   "license": "MIT",
   "dependencies": {

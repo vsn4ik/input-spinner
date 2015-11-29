@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['js/jquery.<%= pkg.name %>.js'],
-        dest: 'dist/jquery.<%= pkg.name %>.js'
+        dest: 'dist/js/jquery.<%= pkg.name %>.js'
       },
     },
     uglify: {
@@ -29,11 +29,11 @@ module.exports = function(grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/jquery.<%= pkg.name %>.min.js'
+        dest: 'dist/js/jquery.<%= pkg.name %>.min.js'
       },
     },
     qunit: {
-      files: ['test/**/*.html']
+      files: 'js/tests/index.html'
     },
     jshint: {
       gruntfile: {
@@ -46,19 +46,19 @@ module.exports = function(grunt) {
         options: {
           jshintrc: 'js/.jshintrc'
         },
-        src: ['js/**/*.js']
+        src: ['js/*.js']
       },
       test: {
         options: {
-          jshintrc: 'test/.jshintrc'
+          jshintrc: 'js/tests/.jshintrc'
         },
-        src: ['test/**/*.js']
+        src: ['js/tests/unit.js']
       },
     },
     less: {
       core: {
         src: 'less/bootstrap-spinner.less',
-        dest: 'dist/bootstrap-spinner.css'
+        dest: 'dist/css/bootstrap-spinner.css'
       }
     }
   });
