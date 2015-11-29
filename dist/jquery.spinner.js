@@ -1,4 +1,4 @@
-/*! jQuery spinner - v0.1.6 - 2015-11-25
+/*! jQuery spinner - v0.1.6 - 2015-11-29
 * https://github.com/xixilive/jquery-spinner
 * Copyright (c) 2015 xixilive; Licensed MIT */
 ;(function($){
@@ -67,7 +67,7 @@
         return this.numeric(this.$el.val());
       }
       v = this.numeric(v);
-      
+
       var valid = this.validate(v);
       if(valid !== 0){
         v = (valid === -1) ? this.min : this.max;

@@ -2,9 +2,7 @@
 
 module.exports = function(grunt) {
 
-  // Project configuration.
   grunt.initConfig({
-    // Metadata.
     pkg: grunt.file.readJSON('spinner.jquery.json'),
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
@@ -21,7 +19,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['src/jquery.<%= pkg.name %>.js'],
+        src: ['js/jquery.<%= pkg.name %>.js'],
         dest: 'dist/jquery.<%= pkg.name %>.js'
       },
     },
@@ -46,9 +44,9 @@ module.exports = function(grunt) {
       },
       src: {
         options: {
-          jshintrc: 'src/.jshintrc'
+          jshintrc: 'js/.jshintrc'
         },
-        src: ['src/**/*.js']
+        src: ['js/**/*.js']
       },
       test: {
         options: {
@@ -57,15 +55,10 @@ module.exports = function(grunt) {
         src: ['test/**/*.js']
       },
     },
-    less:{
-      production:{
-        options: {
-          paths: ["src/"],
-          yuicompress: true
-        },
-        files: {
-          "dist/bootstrap-spinner.css": "src/bootstrap-spinner.less"
-        }
+    less: {
+      core: {
+        src: 'less/bootstrap-spinner.less',
+        dest: 'dist/bootstrap-spinner.css'
       }
     }
   });
@@ -80,5 +73,4 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify', 'less']);
-
 };
