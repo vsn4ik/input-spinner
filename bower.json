@@ -1,6 +1,5 @@
 {
   "name": "jquery-spinner",
-  "version": "0.1.6",
   "description": "A Number-Spinner based-on jQuery, Support keyboard operations and continuous changing",
   "keywords": [
     "spinner",

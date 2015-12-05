@@ -2,7 +2,7 @@
   "name": "spinner",
   "title": "jQuery spinner",
   "description": "A Number-Spinner based-on jQuery, Support Keyboard operations and continuous changing",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "homepage": "https://github.com/xixilive/jquery-spinner",
   "demo": "http://xixilive.github.io/jquery-spinner",
   "author": {

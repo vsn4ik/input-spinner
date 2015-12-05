@@ -1,6 +1,6 @@
 /*
  * spinner
- * https://github.com/xixilive/jquery-spinner
+ * https://github.com/vsn4ik/jquery-spinner
  *
  * Copyright (c) 2013 xixilive
  * Licensed under the MIT license.

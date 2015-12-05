@@ -11,7 +11,10 @@ module.exports = function(grunt) {
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
     // Task configuration.
     clean: {
-      files: ['dist']
+      dist: [
+        'dist',
+        '*-dist.zip'
+      ]
     },
     concat: {
       options: {
@@ -60,17 +63,40 @@ module.exports = function(grunt) {
         src: 'less/bootstrap-spinner.less',
         dest: 'dist/css/bootstrap-spinner.css'
       }
+    },
+    compress: {
+      dist: {
+        options: {
+          archive: '<%= compress.dist.dest %>.zip'
+        },
+        expand: true,
+        cwd: 'dist',
+        src: '**',
+        dest: '<%= pkg.name %>-<%= pkg.version %>-dist'
+      }
     }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-less');
 
-  // Default task.
-  grunt.registerTask('default', ['jshint', 'qunit', 'clean', 'concat', 'uglify', 'less']);
+  grunt.registerTask('default', [
+    'jshint',
+    'qunit',
+    'clean',
+    'concat',
+    'uglify',
+    'less'
+  ]);
+
+  grunt.registerTask('prep-release', [
+    'default',
+    'compress'
+  ]);
 };
