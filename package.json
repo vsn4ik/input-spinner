@@ -9,8 +9,9 @@
     "continuous"
   ],
   "homepage": "http://vsn4ik.github.com/jquery-spinner",
+  "repository": "vsn4ik/jquery-spinner",
   "license": "MIT",
-  "main": "dist/jquery.spinner.min.js",
+  "main": "dist/js/jquery.spinner.js",
   "scripts": {
     "test": "grunt qunit"
   },
@@ -25,7 +26,7 @@
     "grunt-contrib-cssmin": "~0.14.0",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-less": "~1.1.0",
-    "grunt-contrib-qunit": "~0.2.0",
+    "grunt-contrib-qunit": "~0.7.0",
     "grunt-contrib-uglify": "~0.11.0",
     "grunt-contrib-watch": "~0.4.0"
   }

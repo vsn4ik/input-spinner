@@ -1,13 +1,14 @@
 (function($) {
+  'use strict';
 
-  module('Spinner', {
-    setup: function() {
+  QUnit.module('Spinner', {
+    beforeEach: function() {
       this.el = $('[data-trigger="spinner"]');
       this.spinUp = $("[data-spin='up']", this.el);
       this.spinDown = $("[data-spin='down']", this.el);
       this.spinner = this.el.data('spinner');
     },
-    teardown: function(){
+    afterEach: function(){
       this.el
         .spinner('delay', 500)
         .spinner('changed', null)
@@ -16,45 +17,46 @@
     }
   });
 
-  test('Spinner#value', 1, function() {
-    strictEqual(this.spinner.value(), 1);
+  QUnit.test('Spinner#value', function(assert) {
+    assert.strictEqual(this.spinner.value(), 1);
   });
 
-  test('Spinner#delay', 2, function() {
-    strictEqual(this.spinner.constructor.delay, 600);
+  QUnit.test('Spinner#delay', function(assert) {
+    assert.strictEqual(this.spinner.constructor.delay, 600);
     this.el.spinner('delay', 300, 'should plus 100');
-    strictEqual(this.spinner.constructor.delay, 400);
+    assert.strictEqual(this.spinner.constructor.delay, 400);
   });
 
-  asyncTest('Spinner#changed', 1, function() {
+  QUnit.test('Spinner#changed', function(assert) {
     var x = this.spinner.value(), y = 0;
     this.el.spinner('delay', 50).spinner('changed', function(e, newVal){
       y = newVal;
     });
     this.spinUp.click();
+    var done = assert.async();
     setTimeout(function(){
-      strictEqual(y, x+1);
-      start();
+      assert.strictEqual(y, x+1);
+      done();
     }, 200);
   });
 
-  test('Spinner#changing', 1, function() {
+  QUnit.test('Spinner#changing', function(assert) {
     this.el.spinner('changing', function(e, newVal){
-      strictEqual(newVal, 2);
+      assert.strictEqual(newVal, 2);
     });
     this.spinUp.click();
   });
 
-  test('spin via mouse click', 3, function() {
-    strictEqual(this.spinner.value(), 1);
+  QUnit.test('spin via mouse click', function(assert) {
+    assert.strictEqual(this.spinner.value(), 1);
     this.spinUp.click();
-    strictEqual(this.spinner.value(), 2);
+    assert.strictEqual(this.spinner.value(), 2);
     this.spinDown.click();
-    strictEqual(this.spinner.value(), 1);
+    assert.strictEqual(this.spinner.value(), 1);
   });
 
-  test('pass step as a function', 3, function(){
-    strictEqual(this.spinner.value(), 1);
+  QUnit.test('pass step as a function', function(assert){
+    assert.strictEqual(this.spinner.value(), 1);
     this.spinner.spinning.options.step = function(dir){ //to skip 0
       if((this.oldValue === 1 && dir === 'down') || (this.oldValue === -1 && dir === 'up')){
         return 2;
@@ -62,20 +64,19 @@
       return 1;
     };
     this.spinDown.click();
-    strictEqual(this.spinner.value(), -1);
+    assert.strictEqual(this.spinner.value(), -1);
     this.spinUp.click();
-    strictEqual(this.spinner.value(), 1);
+    assert.strictEqual(this.spinner.value(), 1);
   });
 
-  test('no spinning on disabled input', 3, function() {
+  QUnit.test('no spinning on disabled input', function(assert) {
       this.spinner.spinning.$el.attr('disabled', 'disabled');
-      strictEqual(this.spinner.value(), 1);
+      assert.strictEqual(this.spinner.value(), 1);
       this.spinUp.click();
-      strictEqual(this.spinner.value(), 1);
+      assert.strictEqual(this.spinner.value(), 1);
       this.spinner.spinning.$el.val(2);
       this.spinDown.click();
-      strictEqual(this.spinner.value(), 2);
+      assert.strictEqual(this.spinner.value(), 2);
       this.spinner.spinning.$el.removeAttr('disabled');
   });
-
-}(jQuery));
+})(jQuery);
