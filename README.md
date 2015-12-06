@@ -157,7 +157,7 @@ $("#spinner").spinner('step', function(dir){
 
 ## Copyright and license
 
-Copyright Vasily A., 2015.
+Copyright xixilive, 2013&ndash;2015.
 
 Licensed under [the MIT License][license].
 
