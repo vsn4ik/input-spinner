@@ -60,8 +60,24 @@ module.exports = function(grunt) {
     },
     less: {
       core: {
+        options: {
+          sourceMap: true,
+          sourceMapURL: 'bootstrap-spinner.css.map',
+          outputSourceFiles: true
+        },
         src: 'less/bootstrap-spinner.less',
         dest: 'dist/css/bootstrap-spinner.css'
+      }
+    },
+    cssmin: {
+      core: {
+        options: {
+          compatibility: 'ie8',
+          sourceMap: true
+        },
+        expand: true,
+        src: 'dist/css/*.css',
+        ext: '.min.css'
       }
     },
     compress: {
@@ -80,6 +96,7 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-qunit');
@@ -92,7 +109,8 @@ module.exports = function(grunt) {
     'clean',
     'concat',
     'uglify',
-    'less'
+    'less',
+    'cssmin',
   ]);
 
   grunt.registerTask('prep-release', [

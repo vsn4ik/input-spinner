@@ -1,4 +1,9 @@
-# jQuery Spinner
+# [jQuery Spinner](http://vsn4ik.github.io/jquery-spinner)
+
+[![Bower version](https://img.shields.io/bower/v/jquery-spinner.svg)](https://github.com/vsn4ik/jquery-spinner)
+[![License](https://img.shields.io/npm/l/bootstrap-checkbox.svg)][license]
+[![devDependency Status](https://david-dm.org/vsn4ik/jquery-spinner/dev-status.svg)](https://david-dm.org/vsn4ik/jquery-spinner#info=devDependencies)
+
 
 A Number-Spinner based-on jQuery, Support Keyboard operations and continuous changing.
 
@@ -148,3 +153,12 @@ $("#spinner").spinner('step', function(dir){
   //your logic here
 });
 ```
+
+
+## Copyright and license
+
+Copyright Vasily A., 2015.
+
+Licensed under [the MIT License][license].
+
+[license]: https://github.com/vsn4ik/jquery-spinner/blob/master/LICENSE-MIT
