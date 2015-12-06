@@ -25,7 +25,7 @@
   var spinningTimer;
   var Spinning = function(element, options){
     options = $.extend({}, options);
-    this.$el = $(element);
+    this.$el = element;
     this.options = $.extend({}, Spinning.rules.defaults, Spinning.rules[options.rule] || {}, options);
     this.min = parseFloat(this.options.min) || 0;
     this.max = parseFloat(this.options.max) || 0;
@@ -127,7 +127,7 @@
 
   var Spinner = function(element, options){
     options = $.extend({}, options);
-    this.$el = $(element);
+    this.$el = element;
     this.$spinning = $('[data-spin="spinner"]', this.$el);
     if (this.$spinning.length === 0){
       this.$spinning = $(':input[type="text"]', this.$el);
