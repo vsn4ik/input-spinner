@@ -1,13 +1,26 @@
-/*! jQuery spinner - v0.2.0 - 2015-12-05
+/*! jQuery spinner - v0.2.0 - 2015-12-06
 * https://github.com/xixilive/jquery-spinner
 * Copyright (c) 2015 xixilive; Licensed MIT */
-;(function($){
-  "use strict";
+'use strict';
 
+(function(factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module
+    define(['jquery'], factory);
+  }
+  else if (typeof exports === 'object') {
+    // Node/CommonJS
+    module.exports = factory(require('jquery'));
+  }
+  else {
+    // Browser globals
+    factory(jQuery);
+  }
+})(function($) {
   var spinningTimer;
-  var Spinning = function(el, options){
+  var Spinning = function(element, options){
     options = $.extend({}, options);
-    this.$el = el;
+    this.$el = $(element);
     this.options = $.extend({}, Spinning.rules.defaults, Spinning.rules[options.rule] || {}, options);
     this.min = parseFloat(this.options.min) || 0;
     this.max = parseFloat(this.options.max) || 0;
@@ -107,31 +120,31 @@
     }
   };
 
-  var Spinner = function(el, options){
+  var Spinner = function(element, options){
     options = $.extend({}, options);
-    this.$el = el;
-    this.$spinning = $("[data-spin='spinner']", this.$el);
-    if(this.$spinning.length === 0){
-      this.$spinning = $(":input[type='text']", this.$el);
+    this.$el = $(element);
+    this.$spinning = $('[data-spin="spinner"]', this.$el);
+    if (this.$spinning.length === 0){
+      this.$spinning = $(':input[type="text"]', this.$el);
     }
     this.spinning = new Spinning(this.$spinning, $.extend(this.$spinning.data(), options));
 
     this.$el
-      .on('click.spinner', "[data-spin='up'],[data-spin='down']", $.proxy(this, 'spin'))
-      .on('mousedown.spinner', "[data-spin='up'],[data-spin='down']", $.proxy(this, 'spin'));
+      .on('click.spinner', "[data-spin='up'], [data-spin='down']", $.proxy(this, 'spin'))
+      .on('mousedown.spinner', "[data-spin='up'], [data-spin='down']", $.proxy(this, 'spin'));
 
     $(document).on('mouseup.spinner', $.proxy(function(){
       clearTimeout(this.spinTimeout);
       clearInterval(this.spinInterval);
     }, this));
 
-    if(options.delay){
+    if (options.delay){
       this.delay(options.delay);
     }
-    if(options.changed){
+    if (options.changed){
       this.changed(options.changed);
     }
-    if(options.changing){
+    if (options.changing){
       this.changing(options.changing);
     }
   };
@@ -143,7 +156,7 @@
 
     spin: function(e){
       var dir = $(e.currentTarget).data('spin');
-      switch(e.type){
+      switch (e.type) {
         case 'click':
           e.preventDefault();
           this.spinning.spin(dir);
@@ -189,25 +202,28 @@
     }
   };
 
-  $.fn.spinner = function(options, value){
-    return this.each(function(){
+  $.fn.spinner = function(options, value) {
+    return this.each(function() {
       var self = $(this), data = self.data('spinner');
-      if(!data){
+
+      if (!data) {
         self.data('spinner', (data = new Spinner(self, $.extend({}, self.data(), options))));
       }
-      if(options === 'delay' || options === 'changed' || options === 'changing'){
+      if (options === 'delay' || options === 'changed' || options === 'changing') {
         data[options](value);
       }
-      if(options === 'step' && value){
+      else if (options === 'step' && value) {
         data.spinning.step = value;
       }
-      if(options === 'spin' && value){
+      else if (options === 'spin' && value) {
         data.spinning.spin(value);
       }
     });
   };
 
-  $(function(){
+  $(function() {
     $('[data-trigger="spinner"]').spinner();
   });
-})(jQuery);
+
+  return $.fn.spinner;
+});

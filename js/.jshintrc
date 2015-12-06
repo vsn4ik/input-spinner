@@ -1,4 +1,5 @@
 {
+  "globalstrict": true,
   "curly": true,
   "eqeqeq": true,
   "immed": true,
@@ -11,5 +12,10 @@
   "boss": true,
   "eqnull": true,
   "browser": true,
-  "predef": ["jQuery"]
+  "predef": [
+    "require",
+    "define",
+    "module",
+    "jQuery"
+  ]
 }

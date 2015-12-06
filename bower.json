@@ -12,13 +12,20 @@
     "xixilive <xixilive@gmail.com>"
   ],
   "moduleType": [
-    "globals"
+    "amd",
+    "globals",
+    "node"
   ],
   "main": "dist/js/jquery.spinner.js",
   "ignore": [
+    "js/tests",
     "**/.*",
     "CONTRIBUTING.md",
-    "js/tests"
+    "Gruntfile.js",
+    "README.md",
+    "example.html",
+    "package.json",
+    "spinner.jquery,json"
   ],
   "license": "MIT",
   "dependencies": {
