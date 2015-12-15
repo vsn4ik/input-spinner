@@ -9,6 +9,17 @@
     "continuous"
   ],
   "homepage": "http://vsn4ik.github.com/jquery-spinner",
+  "author": {
+    "name": "xixilive",
+    "email": "xixilive@gmail.com",
+    "url": "https://github.com/xixilive"
+  },
+  "contributors": [
+    {
+      "name": "Vasily A.",
+      "url": "https://github.com/vsn4ik"
+    }
+  ],
   "repository": "vsn4ik/jquery-spinner",
   "license": "MIT",
   "main": "dist/js/jquery.spinner.js",

@@ -9,7 +9,10 @@
   ],
   "homepage": "http://vsn4ik.github.com/jquery-spinner",
   "authors": [
-    "xixilive <xixilive@gmail.com>"
+    {
+      "name": "xixilive",
+      "email": "xixilive@gmail.com"
+    }
   ],
   "moduleType": [
     "amd",
