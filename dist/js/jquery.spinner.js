@@ -1,4 +1,4 @@
-/*! jQuery spinner - v0.2.0 - 2015-12-06
+/*! jQuery spinner - v0.2.0 - 2015-12-26
 * https://github.com/xixilive/jquery-spinner
 * Copyright (c) 2015 xixilive; Licensed MIT */
 'use strict';

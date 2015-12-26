@@ -1,4 +1,4 @@
-# [jQuery Spinner](http://vsn4ik.github.io/jquery-spinner)
+# [jQuery Spinner](https://vsn4ik.github.io/jquery-spinner/)
 
 [![Bower version](https://img.shields.io/bower/v/jquery-spinner.svg)](https://github.com/vsn4ik/jquery-spinner)
 [![License](https://img.shields.io/npm/l/bootstrap-checkbox.svg)][license]
@@ -22,9 +22,6 @@ A Number-Spinner based-on jQuery, Support Keyboard operations and continuous cha
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
-
-[min]: https://raw.githubusercontent.com/vsn4ik/jquery-spinner/master/dist/jquery.spinner.min.js
-[max]: https://raw.githubusercontent.com/vsn4ik/jquery-spinner/master/dist/jquery.spinner.js
 
 In your web page:
 
@@ -76,14 +73,14 @@ $("#spinner")
 
 ### Built-in rules
 ```javascript
-  currency: {min: 0.00, max: null, step: 0.01, precision: 2},
-  quantity: {min: 1, max: 999, step: 1, precision:0},
-  percent:  {min: 1, max: 100, step: 1, precision:0},
-  month:    {min: 1, max: 12, step: 1, precision:0},
-  day:      {min: 1, max: 31, step: 1, precision:0},
-  hour:     {min: 0, max: 23, step: 1, precision:0},
-  minute:   {min: 1, max: 59, step: 1, precision:0},
-  second:   {min: 1, max: 59, step: 1, precision:0}
+  currency: { min: 0.00, max: null, step: 0.01, precision: 2 },
+  quantity: { min: 1, max: 999, step: 1, precision:0 },
+  percent:  { min: 1, max: 100, step: 1, precision:0 },
+  month:    { min: 1, max: 12, step: 1, precision:0 },
+  day:      { min: 1, max: 31, step: 1, precision:0 },
+  hour:     { min: 0, max: 23, step: 1, precision:0 },
+  minute:   { min: 1, max: 59, step: 1, precision:0 },
+  second:   { min: 1, max: 59, step: 1, precision:0 }
 ```
 Usage:
 ```html
@@ -162,3 +159,5 @@ Copyright xixilive, 2013&ndash;2015.
 Licensed under [the MIT License][license].
 
 [license]: https://github.com/vsn4ik/jquery-spinner/blob/master/LICENSE-MIT
+[min]: https://raw.githubusercontent.com/vsn4ik/jquery-spinner/master/dist/jquery.spinner.min.js
+[max]: https://raw.githubusercontent.com/vsn4ik/jquery-spinner/master/dist/jquery.spinner.js

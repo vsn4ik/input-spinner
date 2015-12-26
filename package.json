@@ -1,6 +1,6 @@
 {
+  "private": true,
   "name": "jquery-spinner",
-  "version": "0.0.0-ignored",
   "description": "A Number-Spinner based-on jQuery, Support Keyboard operations and continuous changing",
   "keywords": [
     "spinner",
@@ -8,7 +8,7 @@
     "number-spinner",
     "continuous"
   ],
-  "homepage": "http://vsn4ik.github.com/jquery-spinner",
+  "homepage": "https://vsn4ik.github.io/jquery-spinner/",
   "author": {
     "name": "xixilive",
     "email": "xixilive@gmail.com",
@@ -26,14 +26,11 @@
   "scripts": {
     "test": "grunt qunit"
   },
-  "engines": {
-    "node": ">= 0.8.0"
-  },
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-clean": "~0.7.0",
     "grunt-contrib-compress": "~0.14.0",
-    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-concat": "~0.5.1",
     "grunt-contrib-cssmin": "~0.14.0",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-less": "~1.1.0",

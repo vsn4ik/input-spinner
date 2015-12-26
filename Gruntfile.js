@@ -22,7 +22,9 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['js/jquery.<%= pkg.name %>.js'],
+        src: [
+          'js/jquery.<%= pkg.name %>.js'
+        ],
         dest: 'dist/js/jquery.<%= pkg.name %>.js'
       },
     },
@@ -39,23 +41,23 @@ module.exports = function(grunt) {
       files: 'js/tests/index.html'
     },
     jshint: {
+      options: {
+        jshintrc: 'js/.jshintrc'
+      },
       gruntfile: {
         options: {
-          jshintrc: '.jshintrc'
+          jshintrc: 'grunt/.jshintrc'
         },
         src: 'Gruntfile.js'
       },
-      src: {
-        options: {
-          jshintrc: 'js/.jshintrc'
-        },
-        src: ['js/*.js']
+      core: {
+        src: 'js/*.js'
       },
       test: {
         options: {
-          jshintrc: 'js/tests/.jshintrc'
+          jshintrc: 'js/tests/unit/.jshintrc'
         },
-        src: ['js/tests/unit.js']
+        src: 'js/tests/unit/*.js'
       },
     },
     less: {
