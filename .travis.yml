@@ -1,0 +1,13 @@
+# Use container-based architecture
+sudo: false
+
+language: node_js
+node_js:
+  - "5"
+before_install:
+  - npm install --global grunt-cli
+branches:
+  only:
+    - master
+notifications:
+  email: false
