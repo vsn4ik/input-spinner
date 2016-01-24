@@ -155,10 +155,10 @@ $("#spinner").spinner('step', function(dir){
 
 ## Copyright and license
 
-Copyright xixilive, 2013&ndash;2015.
+Copyright xixilive, 2013&ndash;2016.
 
 Licensed under [the MIT License][license].
 
 [license]: https://github.com/vsn4ik/jquery.spinner/blob/master/LICENSE
-[min]: https://raw.githubusercontent.com/vsn4ik/jquery.spinner/master/dist/jquery.spinner.min.js
-[max]: https://raw.githubusercontent.com/vsn4ik/jquery.spinner/master/dist/jquery.spinner.js
+[min]: https://raw.githubusercontent.com/vsn4ik/jquery.spinner/master/dist/js/jquery.spinner.min.js
+[max]: https://raw.githubusercontent.com/vsn4ik/jquery.spinner/master/dist/js/jquery.spinner.js
