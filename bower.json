@@ -1,5 +1,5 @@
 {
-  "name": "jquery-spinner",
+  "name": "jquery.spinner",
   "description": "A Number-Spinner based-on jQuery, Support keyboard operations and continuous changing",
   "keywords": [
     "spinner",
@@ -7,7 +7,7 @@
     "number-spinner",
     "continuous"
   ],
-  "homepage": "https://vsn4ik.github.io/jquery-spinner/",
+  "homepage": "https://vsn4ik.github.io/jquery.spinner/",
   "authors": [
     {
       "name": "xixilive",

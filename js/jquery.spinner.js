@@ -1,9 +1,8 @@
 /*
- * spinner
- * https://github.com/vsn4ik/jquery-spinner
- *
- * Copyright (c) 2013 xixilive
- * Licensed under the MIT license.
+ * jquery.spinner
+ * https://github.com/vsn4ik/jquery.spinner
+ * Copyright 2013-2015 vsn4ik
+ * Licensed under the MIT license
  */
 
 'use strict';

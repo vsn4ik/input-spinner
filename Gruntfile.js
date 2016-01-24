@@ -3,13 +3,14 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('spinner.jquery.json'),
-    banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-      '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
-      ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
-    // Task configuration.
+    pkg: grunt.file.readJSON('package.json'),
+    banner: [
+      '/*!',
+      ' * <%= pkg.name %> v<%= pkg.version %> (<%= pkg.homepage %>)',
+      ' * Copyright 2013-<%= grunt.template.today("yyyy") %> <%= pkg.author.name %>',
+      ' * Licensed under the <%= pkg.license %> license',
+      ' */'
+    ].join('\n') + '\n',
     clean: {
       dist: [
         'dist',
@@ -23,9 +24,9 @@ module.exports = function(grunt) {
       },
       dist: {
         src: [
-          'js/jquery.<%= pkg.name %>.js'
+          'js/<%= pkg.name %>.js'
         ],
-        dest: 'dist/js/jquery.<%= pkg.name %>.js'
+        dest: 'dist/js/<%= pkg.name %>.js'
       },
     },
     uglify: {
@@ -34,7 +35,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/js/jquery.<%= pkg.name %>.min.js'
+        dest: 'dist/js/<%= pkg.name %>.min.js'
       },
     },
     qunit: {

@@ -1,9 +1,9 @@
-# [jQuery Spinner](https://vsn4ik.github.io/jquery-spinner/)
+# [jQuery Spinner](https://vsn4ik.github.io/jquery.spinner/)
 
-[![Bower version](https://img.shields.io/bower/v/jquery-spinner.svg)](https://github.com/vsn4ik/jquery-spinner)
-[![License](https://img.shields.io/npm/l/bootstrap-checkbox.svg)][license]
-[![Build Status](https://travis-ci.org/vsn4ik/jquery-spinner.svg)](https://travis-ci.org/vsn4ik/jquery-spinner)
-[![devDependency Status](https://david-dm.org/vsn4ik/jquery-spinner/dev-status.svg)](https://david-dm.org/vsn4ik/jquery-spinner#info=devDependencies)
+[![Bower version](https://img.shields.io/bower/v/jquery.spinner.svg)](https://github.com/vsn4ik/jquery.spinner)
+[![License](https://img.shields.io/npm/l/jquery.spinner.svg)][license]
+[![Build Status](https://travis-ci.org/vsn4ik/jquery.spinner.svg)](https://travis-ci.org/vsn4ik/jquery.spinner)
+[![devDependency Status](https://david-dm.org/vsn4ik/jquery.spinner/dev-status.svg)](https://david-dm.org/vsn4ik/jquery.spinner#info=devDependencies)
 
 
 A Number-Spinner based-on jQuery, Support Keyboard operations and continuous changing.
@@ -159,6 +159,6 @@ Copyright xixilive, 2013&ndash;2015.
 
 Licensed under [the MIT License][license].
 
-[license]: https://github.com/vsn4ik/jquery-spinner/blob/master/LICENSE
-[min]: https://raw.githubusercontent.com/vsn4ik/jquery-spinner/master/dist/jquery.spinner.min.js
-[max]: https://raw.githubusercontent.com/vsn4ik/jquery-spinner/master/dist/jquery.spinner.js
+[license]: https://github.com/vsn4ik/jquery.spinner/blob/master/LICENSE
+[min]: https://raw.githubusercontent.com/vsn4ik/jquery.spinner/master/dist/jquery.spinner.min.js
+[max]: https://raw.githubusercontent.com/vsn4ik/jquery.spinner/master/dist/jquery.spinner.js

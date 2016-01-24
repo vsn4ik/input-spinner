@@ -3,8 +3,8 @@
   "title": "jQuery spinner",
   "description": "A Number-Spinner based-on jQuery, Support Keyboard operations and continuous changing",
   "version": "0.2.0",
-  "homepage": "https://github.com/vsn4ik/jquery-spinner",
-  "demo": "https://vsn4ik.github.io/jquery-spinner/",
+  "homepage": "https://github.com/vsn4ik/jquery.spinner",
+  "demo": "https://vsn4ik.github.io/jquery.spinner/",
   "author": {
     "name": "xixilive",
     "email": "xixilive@gmail.com",
@@ -12,13 +12,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/vsn4ik/jquery-spinner.git"
+    "url": "https://github.com/vsn4ik/jquery.spinner.git"
   },
-  "bugs": "https://github.com/xixilive/jquery-spinner/issues",
+  "bugs": "https://github.com/vsn4ik/jquery.spinner/issues",
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/vsn4ik/jquery-spinner/blob/master/LICENSE"
+      "url": "https://github.com/vsn4ik/jquery.spinner/blob/master/LICENSE"
     }
   ],
   "dependencies": {
