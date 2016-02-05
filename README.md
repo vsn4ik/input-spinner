@@ -126,8 +126,7 @@ Usage:
 </div>
 
 <script>
-  $("#spinner")
-  .spinner('changing', function(e, newVal, oldVal) {
+  $("#spinner").spinner('changing', function(e, newVal, oldVal) {
     $('#spinner-value').html(newVal);
   });
 </script>
