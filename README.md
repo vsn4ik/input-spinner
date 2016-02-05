@@ -32,10 +32,10 @@ In your web page:
 <script>
 $("#spinner")
   .spinner('delay', 200) //delay in ms
-  .spinner('changed', function(e, newVal, oldVal){
+  .spinner('changed', function(e, newVal, oldVal) {
     //trigger lazed, depend on delay option.
   })
-  .spinner('changing', function(e, newVal, oldVal){
+  .spinner('changing', function(e, newVal, oldVal) {
     //trigger immediately
   });
 </script>
@@ -127,8 +127,8 @@ Usage:
 
 <script>
   $("#spinner")
-  .spinner('changing', function(e, newVal, oldVal){
-    #('#spinner-value').html(newVal);
+  .spinner('changing', function(e, newVal, oldVal) {
+    $('#spinner-value').html(newVal);
   });
 </script>
 ```
@@ -137,9 +137,9 @@ Usage:
 ```javascript
 //To skip 0
 $("#spinner").spinner({
-  step: function(dir){
+  step: function(dir) {
     //'this' references to the spinner object
-    if((this.oldValue === 1 && dir === 'down') || (this.oldValue === -1 && dir === 'up')){
+    if ((this.oldValue === 1 && dir === 'down') || (this.oldValue === -1 && dir === 'up')) {
       return 2;
     }
     return 1;
@@ -147,7 +147,7 @@ $("#spinner").spinner({
 });
 
 //or use API syntax
-$("#spinner").spinner('step', function(dir){
+$("#spinner").spinner('step', function(dir) {
   //your logic here
 });
 ```
