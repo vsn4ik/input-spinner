@@ -110,7 +110,7 @@ Usage:
 
 ```html
 <div data-trigger="spinner">
-  <input type="text" value="0" title="this field isn't a spinning."/>
+  <input type="text" value="0" title="this field isn't a spinning.">
   <input type="text" value="1" data-spin="spinner" data-rule="quantity" data-max="10">
 </div>
 ```
