@@ -20,6 +20,7 @@
   }
 })(function($) {
   var spinningTimer;
+  var Spinner;
   var Spinning = function(element, options) {
     options = $.extend({}, options);
     this.$el = element;
@@ -129,7 +130,7 @@
     }
   };
 
-  var Spinner = function(element, options) {
+  Spinner = function(element, options) {
     options = $.extend({}, options);
     this.$el = element;
     this.$spinning = this.$el.find('[data-spin="spinner"]');

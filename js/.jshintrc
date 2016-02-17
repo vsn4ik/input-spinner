@@ -1,6 +1,6 @@
 {
-  "globalstrict": true,
   "curly": true,
+  "globalstrict": true,
   "eqeqeq": true,
   "immed": true,
   "latedef": true,
