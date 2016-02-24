@@ -21,9 +21,8 @@
 })(function($) {
   var spinningTimer;
   var Spinner;
-  var Spinning = function(element, options) {
-    options = $.extend({}, options);
-    this.$el = element;
+  var Spinning = function($element, options) {
+    this.$el = $element;
     this.options = $.extend({}, Spinning.rules.defaults, Spinning.rules[options.rule] || {}, options);
     this.min = Number(this.options.min) || 0;
     this.max = Number(this.options.max) || 0;
@@ -95,10 +94,10 @@
       this.$el.val(v.toFixed(this.options.precision));
 
       if (this.oldValue !== this.value()) {
-        //changing.spinner
+        // changing.spinner
         this.$el.trigger('changing.spinner', [this.value(), this.oldValue]);
 
-        //lazy changed.spinner
+        // lazy changed.spinner
         clearTimeout(spinningTimer);
         spinningTimer = setTimeout($.proxy(function() {
           this.$el.trigger('changed.spinner', [this.value(), this.oldValue]);
@@ -131,18 +130,20 @@
   };
 
   Spinner = function(element, options) {
-    options = $.extend({}, options);
-    this.$el = element;
+    this.$el = $(element);
     this.$spinning = this.$el.find('[data-spin="spinner"]');
 
     if (this.$spinning.length === 0) {
       this.$spinning = this.$el.find(':input[type="text"]');
     }
-    this.spinning = new Spinning(this.$spinning, $.extend({}, this.$spinning.data(), options));
+
+    options = $.extend({}, options, this.$spinning.data());
+
+    this.spinning = new Spinning(this.$spinning, options);
 
     this.$el
-      .on('click.spinner', "[data-spin='up'], [data-spin='down']", $.proxy(this, 'spin'))
-      .on('mousedown.spinner', "[data-spin='up'], [data-spin='down']", $.proxy(this, 'spin'));
+      .on('click.spinner', '[data-spin="up"], [data-spin="down"]', $.proxy(this, 'spin'))
+      .on('mousedown.spinner', '[data-spin="up"], [data-spin="down"]', $.proxy(this, 'spin'));
 
     $(document).on('mouseup.spinner', $.proxy(function() {
       clearTimeout(this.spinTimeout);
@@ -219,11 +220,11 @@
 
   $.fn.spinner = function(options, value) {
     return this.each(function() {
-      var self = $(this);
+      //var self = $(this);
       var data = $.data(this, 'spinner');
 
       if (!data) {
-        data = new Spinner(self, $.extend({}, self.data(), options));
+        data = new Spinner(this, options);//$.extend({}, self.data(), options));
 
         $.data(this, 'spinner', data);
       }
