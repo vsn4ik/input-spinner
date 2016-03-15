@@ -31,7 +31,8 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        banner: '<%= banner %>'
+        banner: '<%= banner %>',
+        report: 'none'
       },
       dist: {
         src: '<%= concat.dist.dest %>',
@@ -75,8 +76,7 @@ module.exports = function(grunt) {
     cssmin: {
       core: {
         options: {
-          compatibility: 'ie8',
-          sourceMap: true
+          compatibility: 'ie8'
         },
         expand: true,
         src: 'dist/css/*.css',
