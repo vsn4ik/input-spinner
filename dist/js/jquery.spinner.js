@@ -218,13 +218,14 @@
     }
   };
 
+  var old = $.fn.spinner;
+
   $.fn.spinner = function(options, value) {
     return this.each(function() {
-      //var self = $(this);
       var data = $.data(this, 'spinner');
 
       if (!data) {
-        data = new Spinner(this, options);//$.extend({}, self.data(), options));
+        data = new Spinner(this, options);
 
         $.data(this, 'spinner', data);
       }
@@ -238,6 +239,12 @@
         data.spinning.spin(value);
       }
     });
+  };
+
+  $.fn.spinner.Constructor = Spinner;
+  $.fn.spinner.noConflict = function() {
+    $.fn.spinner = old;
+    return this;
   };
 
   $(function() {
