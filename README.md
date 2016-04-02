@@ -11,7 +11,7 @@ A Number-Spinner based-on jQuery, Support Keyboard operations and continuous cha
 ## Basic usage, it's very simple
 ```html
 <!-- // ref javascript file -->
-<script src="dist/jquery.spinner.min.js"></script>
+<script src="dist/js/jquery.spinner.js"></script>
 
 <!-- // spinner plugin DOM -->
 <div data-trigger="spinner">
@@ -28,15 +28,15 @@ In your web page:
 
 ```html
 <script src="jquery.js"></script>
-<script src="dist/jquery.spinner.min.js"></script>
+<script src="dist/js/jquery.spinner.js"></script>
 <script>
 $("#spinner")
   .spinner('delay', 200) //delay in ms
   .spinner('changed', function(e, newVal, oldVal) {
-    //trigger lazed, depend on delay option.
+    // trigger lazed, depend on delay option.
   })
   .spinner('changing', function(e, newVal, oldVal) {
-    //trigger immediately
+    // trigger immediately
   });
 </script>
 
@@ -93,7 +93,7 @@ Usage:
 ### Work with Bootstrap 3 and Font Awesome 4
 
 ```html
-<link href="dist/bootstrap-spinner.css" rel="stylesheet">
+<link href="dist/css/bootstrap-spinner.css" rel="stylesheet">
 
 <div class="input-group spinner" data-trigger="spinner">
   <input type="text" class="form-control text-center" value="1" data-rule="quantity">
@@ -134,10 +134,10 @@ Usage:
 
 #### pass step options as a function
 ```javascript
-//To skip 0
+// To skip 0
 $("#spinner").spinner({
   step: function(dir) {
-    //'this' references to the spinner object
+    // 'this' references to the spinner object
     if ((this.oldValue === 1 && dir === 'down') || (this.oldValue === -1 && dir === 'up')) {
       return 2;
     }
@@ -145,9 +145,9 @@ $("#spinner").spinner({
   }
 });
 
-//or use API syntax
+// or use API syntax
 $("#spinner").spinner('step', function(dir) {
-  //your logic here
+  // your logic here
 });
 ```
 
