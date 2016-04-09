@@ -28,7 +28,7 @@
     "test": "grunt qunit"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
+    "grunt": "~1.0.1",
     "grunt-contrib-clean": "~1.0.0",
     "grunt-contrib-compress": "~1.2.0",
     "grunt-contrib-concat": "~1.0.0",
@@ -36,6 +36,10 @@
     "grunt-contrib-jshint": "~1.0.0",
     "grunt-contrib-less": "~1.2.0",
     "grunt-contrib-qunit": "~1.1.0",
-    "grunt-contrib-uglify": "~1.0.1"
+    "grunt-contrib-uglify": "~1.0.1",
+    "load-grunt-tasks": "~3.5.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
   }
 }
