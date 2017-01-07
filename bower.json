@@ -21,6 +21,7 @@
   ],
   "main": "dist/js/jquery.spinner.js",
   "ignore": [
+    "docs",
     "js/tests",
     "**/.*",
     "CONTRIBUTING.md",

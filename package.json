@@ -23,6 +23,12 @@
   ],
   "repository": "vsn4ik/jquery.spinner",
   "license": "MIT",
+  "files": [
+    "dist",
+    "js/*.js",
+    "less",
+    "LICENSE"
+  ],
   "main": "dist/js/jquery.spinner.js",
   "scripts": {
     "test": "grunt qunit"
