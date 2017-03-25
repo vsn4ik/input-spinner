@@ -1,7 +1,8 @@
 /*
  * jquery.spinner
  * https://github.com/vsn4ik/jquery.spinner
- * Copyright 2013-2016 vsn4ik
+ * Copyright Vasily A., 2015&ndash;2017
+ * Copyright xixilive, 2013&ndash;2015
  * Licensed under the MIT license
  */
 
