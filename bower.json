@@ -27,9 +27,7 @@
     "CONTRIBUTING.md",
     "Gruntfile.js",
     "README.md",
-    "example.html",
-    "package.json",
-    "spinner.jquery,json"
+    "package.json"
   ],
   "license": "MIT",
   "dependencies": {
