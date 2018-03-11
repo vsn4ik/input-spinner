@@ -1,7 +1,7 @@
 /*
  * jquery.spinner
  * https://github.com/vsn4ik/jquery.spinner
- * Copyright Vasily A., 2015&ndash;2017
+ * Copyright Vasilii A., 2015&ndash;2018
  * Copyright xixilive, 2013&ndash;2015
  * Licensed under the MIT license
  */
@@ -12,12 +12,10 @@
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module
     define(['jquery'], factory);
-  }
-  else if (typeof exports === 'object') {
+  } else if (typeof exports === 'object') {
     // Node/CommonJS
     module.exports = factory(require('jquery'));
-  }
-  else {
+  } else {
     // Browser globals
     factory(jQuery);
   }
@@ -210,8 +208,7 @@
     bindHandler: function(t, fn) {
       if ($.isFunction(fn)) {
         this.$spinning.on(t, fn);
-      }
-      else {
+      } else {
         this.$spinning.off(t);
       }
     },
@@ -234,11 +231,9 @@
       }
       if (options === 'delay' || options === 'changed' || options === 'changing') {
         data[options](value);
-      }
-      else if (options === 'step' && value) {
+      } else if (options === 'step' && value) {
         data.spinning.step = value;
-      }
-      else if (options === 'spin' && value) {
+      } else if (options === 'spin' && value) {
         data.spinning.spin(value);
       }
     });

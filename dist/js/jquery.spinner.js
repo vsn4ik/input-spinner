@@ -1,6 +1,6 @@
 /*!
  * jquery.spinner v0.2.1 (https://vsn4ik.github.io/jquery.spinner/)
- * Copyright 2013-2017 xixilive
+ * Copyright 2013-2018 xixilive
  * Licensed under the MIT license
  */
 'use strict';
@@ -9,12 +9,10 @@
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module
     define(['jquery'], factory);
-  }
-  else if (typeof exports === 'object') {
+  } else if (typeof exports === 'object') {
     // Node/CommonJS
     module.exports = factory(require('jquery'));
-  }
-  else {
+  } else {
     // Browser globals
     factory(jQuery);
   }
@@ -207,8 +205,7 @@
     bindHandler: function(t, fn) {
       if ($.isFunction(fn)) {
         this.$spinning.on(t, fn);
-      }
-      else {
+      } else {
         this.$spinning.off(t);
       }
     },
@@ -231,11 +228,9 @@
       }
       if (options === 'delay' || options === 'changed' || options === 'changing') {
         data[options](value);
-      }
-      else if (options === 'step' && value) {
+      } else if (options === 'step' && value) {
         data.spinning.step = value;
-      }
-      else if (options === 'spin' && value) {
+      } else if (options === 'spin' && value) {
         data.spinning.spin(value);
       }
     });
