@@ -30,7 +30,7 @@
   ],
   "main": "dist/js/jquery.spinner.js",
   "scripts": {
-    "test": "karma js/tests/karma.conf.js",
+    "test": "karma start js/tests/karma.conf.js",
     "release-zip": "cd dist/ && zip -r9 $npm_package_name-$npm_package_version-dist.zip * && mv $npm_package_name-$npm_package_version-dist.zip .."
   },
   "devDependencies": {
