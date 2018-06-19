@@ -29,16 +29,6 @@ module.exports = function(grunt) {
         dest: 'dist/js/<%= pkg.name %>.js'
       },
     },
-    uglify: {
-      options: {
-        banner: '<%= banner %>',
-        report: 'none'
-      },
-      dist: {
-        src: '<%= concat.dist.dest %>',
-        dest: 'dist/js/<%= pkg.name %>.min.js'
-      },
-    },
     jshint: {
       options: {
         jshintrc: 'js/.jshintrc'
@@ -57,16 +47,6 @@ module.exports = function(grunt) {
         src: 'less/bootstrap-spinner.less',
         dest: 'dist/css/bootstrap-spinner.css'
       }
-    },
-    cssmin: {
-      core: {
-        options: {
-          compatibility: 'ie8'
-        },
-        expand: true,
-        src: 'dist/css/*.css',
-        ext: '.min.css'
-      }
     }
   });
 
@@ -79,8 +59,6 @@ module.exports = function(grunt) {
     'jshint',
     'clean',
     'concat',
-    'uglify',
-    'less',
-    'cssmin'
+    'less'
   ]);
 };
