@@ -36,17 +36,6 @@ module.exports = function(grunt) {
       core: {
         src: 'js/*.js'
       }
-    },
-    less: {
-      core: {
-        options: {
-          sourceMap: true,
-          sourceMapURL: 'bootstrap-spinner.css.map',
-          outputSourceFiles: true
-        },
-        src: 'less/bootstrap-spinner.less',
-        dest: 'dist/css/bootstrap-spinner.css'
-      }
     }
   });
 
@@ -58,7 +47,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'jshint',
     'clean',
-    'concat',
-    'less'
+    'concat'
   ]);
 };
