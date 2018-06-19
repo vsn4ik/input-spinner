@@ -14,9 +14,9 @@ A Number-Spinner based-on jQuery, Support Keyboard operations and continuous cha
 
 <!-- // spinner plugin DOM -->
 <div data-trigger="spinner">
-  <a href="javascript:;" data-spin="down">-</a>
-  <input type="text" value="1" data-rule="quantity">
-  <a href="javascript:;" data-spin="up">+</a>
+  <button type="button" data-spin="up">+</button>
+  <input type="text" value="1" data-ruler="quantity">
+  <button type="button" data-spin="down">-</button>
 </div>
 ```
 
@@ -40,9 +40,9 @@ $("#spinner")
 </script>
 
 <div data-trigger="spinner" id="spinner">
-  <a href="javascript:;" data-spin="down">-</a>
-  <input type="text" value="1" data-rule="quantity">
-  <a href="javascript:;" data-spin="up">+</a>
+  <button type="button" data-spin="up">+</button>
+  <input type="text" value="1" data-ruler="quantity">
+  <button type="button" data-spin="down">-</button>
 </div>
 ```
 

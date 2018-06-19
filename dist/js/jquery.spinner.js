@@ -132,7 +132,7 @@
     this.$spinning = this.$el.find('[data-spin="spinner"]');
 
     if (this.$spinning.length === 0) {
-      this.$spinning = this.$el.find(':input[type="text"]');
+      this.$spinning = this.$el.find('input[type="text"]');
     }
 
     options = $.extend({}, options, this.$spinning.data());

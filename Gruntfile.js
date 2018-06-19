@@ -39,28 +39,13 @@ module.exports = function(grunt) {
         dest: 'dist/js/<%= pkg.name %>.min.js'
       },
     },
-    qunit: {
-      files: 'js/tests/index.html'
-    },
     jshint: {
       options: {
         jshintrc: 'js/.jshintrc'
       },
-      gruntfile: {
-        options: {
-          jshintrc: 'grunt/.jshintrc'
-        },
-        src: 'Gruntfile.js'
-      },
       core: {
         src: 'js/*.js'
-      },
-      test: {
-        options: {
-          jshintrc: 'js/tests/unit/.jshintrc'
-        },
-        src: 'js/tests/unit/*.js'
-      },
+      }
     },
     less: {
       core: {
@@ -82,17 +67,6 @@ module.exports = function(grunt) {
         src: 'dist/css/*.css',
         ext: '.min.css'
       }
-    },
-    compress: {
-      dist: {
-        options: {
-          archive: '<%= compress.dist.dest %>.zip'
-        },
-        expand: true,
-        cwd: 'dist',
-        src: '**',
-        dest: '<%= pkg.name %>-<%= pkg.version %>-dist'
-      }
     }
   });
 
@@ -103,16 +77,10 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'jshint',
-    'qunit',
     'clean',
     'concat',
     'uglify',
     'less',
-    'cssmin',
-  ]);
-
-  grunt.registerTask('prep-release', [
-    'default',
-    'compress'
+    'cssmin'
   ]);
 };

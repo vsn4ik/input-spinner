@@ -1,6 +1,28 @@
-(function($) {
+document.addEventListener('DOMContentLoaded', function() {
   'use strict';
 
+  QUnit.test('should be defined on jquery object', function(assert) {
+    assert.expect(1);
+    assert.ok($.fn.spinner, 'spinner method is defined');
+  });
+
+  QUnit.test('spinner#value', function(assert) {
+    assert.expect(1);
+
+    const $el = $(`
+      <div id="qunit-fixture" class="js-spinner">
+        <button type="button" data-spin="up">+</button>
+        <input type="text" value="1" data-ruler="quantity">
+        <button type="button" data-spin="down">-</button>
+      </div>
+    `).spinner();
+
+    const spinner = $el.data('spinner');
+
+    assert.ok(spinner.value() === 1);
+  });
+
+  /**
   QUnit.module('Spinner', {
     beforeEach: function() {
       this.$el = $('.js-spinner').spinner();
@@ -16,10 +38,6 @@
 
       this.spinner.spinning.$el.val(1);
     }
-  });
-
-  QUnit.test('Spinner#value', function(assert) {
-    assert.ok(this.spinner.value() === 1);
   });
 
   QUnit.test('Spinner#delay', function(assert) {
@@ -83,4 +101,5 @@
     assert.ok(this.spinner.value() === 2);
     this.spinner.spinning.$el.prop('disabled', false);
   });
-})(jQuery);
+  */
+});
