@@ -1,8 +1,11 @@
-/*!
- * jquery.spinner v0.2.1 (https://vsn4ik.github.io/jquery.spinner/)
- * Copyright 2013-2018 xixilive
+/*
+ * jquery.spinner
+ * https://github.com/vsn4ik/jquery.spinner
+ * Copyright Vasilii A., 2015–2018
+ * Copyright xixilive, 2013–2015
  * Licensed under the MIT license
  */
+
 'use strict';
 
 (function(factory) {

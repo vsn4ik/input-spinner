@@ -6,26 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
     assert.ok($.fn.spinner, 'spinner method is defined');
   });
 
-  QUnit.test('spinner#value', function(assert) {
-    assert.expect(1);
-
-    const $el = $(`
-      <div id="qunit-fixture" class="js-spinner">
-        <button type="button" data-spin="up">+</button>
-        <input type="text" value="1" data-ruler="quantity">
-        <button type="button" data-spin="down">-</button>
-      </div>
-    `).spinner();
-
-    const spinner = $el.data('spinner');
-
-    assert.ok(spinner.value() === 1);
-  });
-
-  /**
   QUnit.module('Spinner', {
     beforeEach: function() {
-      this.$el = $('.js-spinner').spinner();
+      this.$el = $(`
+        <div id="qunit-fixture" class="js-spinner">
+          <button type="button" data-spin="up">+</button>
+          <input type="text" value="1" data-ruler="quantity">
+          <button type="button" data-spin="down">-</button>
+        </div>
+      `).spinner();
+
       this.$spinUp = this.$el.find('[data-spin="up"]');
       this.$spinDown = this.$el.find('[data-spin="down"]');
       this.spinner = this.$el.data('spinner');
@@ -40,7 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  QUnit.test('spinner#value', function(assert) {
+    assert.expect(1);
+    assert.ok(this.spinner.value() === 1);
+  });
+
   QUnit.test('Spinner#delay', function(assert) {
+    assert.expect(2);
     assert.ok(this.spinner.constructor.delay === 600);
     this.$el.spinner('delay', 300, 'should plus 100');
     assert.ok(this.spinner.constructor.delay === 400);
@@ -101,5 +97,4 @@ document.addEventListener('DOMContentLoaded', function() {
     assert.ok(this.spinner.value() === 2);
     this.spinner.spinning.$el.prop('disabled', false);
   });
-  */
 });

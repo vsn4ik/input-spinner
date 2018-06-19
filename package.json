@@ -30,26 +30,24 @@
   ],
   "main": "dist/js/jquery.spinner.js",
   "scripts": {
-    "test": "karma start js/tests/karma.conf.js",
+    "test": "npm run css; npm run js; karma start js/tests/karma.conf.js",
+    "css": "npm run css-compile; npm run css-minify",
     "css-compile": "lessc less/bootstrap-spinner.less dist/css/bootstrap-spinner.css",
     "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/css/bootstrap-spinner.min.css dist/css/bootstrap-spinner.css",
+    "js": "npm run js-compile; npm run js-minify",
+    "js-compile": "mkdir -p dist/js; cp -rf js/*.js dist/js/",
     "js-minify": "uglifyjs --compress --output dist/js/$npm_package_name.min.js dist/js/$npm_package_name.js",
     "release-zip": "cd dist/ && zip -r9 $npm_package_name-$npm_package_version-dist.zip * && mv $npm_package_name-$npm_package_version-dist.zip .."
   },
   "devDependencies": {
-    "grunt": "1.0.3",
-    "grunt-contrib-clean": "1.1.0",
-    "grunt-contrib-concat": "1.0.1",
-    "grunt-contrib-jshint": "1.1.0",
-    "load-grunt-tasks": "4.0.0",
     "puppeteer": "1.5.0",
     "karma": "2.0.3",
     "karma-chrome-launcher": "2.2.0",
     "karma-qunit": "2.1.0",
     "karma-sinon": "1.0.5",
-    "qunit": "2.6.1",
     "clean-css-cli": "4.1.11",
     "uglify-js": "3.4.0",
-    "less": "3.0.4"
+    "less": "3.0.4",
+    "qunit": "2.6.1"
   }
 }
