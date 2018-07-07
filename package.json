@@ -41,13 +41,13 @@
   },
   "devDependencies": {
     "puppeteer": "1.5.0",
-    "karma": "2.0.3",
+    "karma": "2.0.4",
     "karma-chrome-launcher": "2.2.0",
     "karma-qunit": "2.1.0",
     "karma-sinon": "1.0.5",
     "clean-css-cli": "4.1.11",
-    "uglify-js": "3.4.1",
-    "less": "3.0.4",
+    "uglify-js": "3.4.3",
+    "less": "3.5.3",
     "qunit": "2.6.1"
   }
 }
