@@ -46,8 +46,8 @@
     "karma-qunit": "2.1.0",
     "karma-sinon": "1.0.5",
     "clean-css-cli": "4.1.11",
-    "uglify-js": "3.4.3",
-    "less": "3.5.3",
+    "uglify-js": "3.4.4",
+    "less": "3.7.1",
     "qunit": "2.6.1"
   }
 }
