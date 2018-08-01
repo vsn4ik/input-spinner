@@ -1,5 +1,2 @@
-# Files to ignore
-*-dist.zip
-
-# Folders to ignore
 /node_modules/
+*-dist.zip
