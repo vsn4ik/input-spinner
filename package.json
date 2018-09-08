@@ -40,14 +40,14 @@
     "release-zip": "cd dist/ && zip -r9 $npm_package_name-$npm_package_version-dist.zip * && mv $npm_package_name-$npm_package_version-dist.zip .."
   },
   "devDependencies": {
-    "puppeteer": "1.6.1",
-    "karma": "2.0.5",
+    "puppeteer": "1.8.0",
+    "karma": "3.0.0",
     "karma-chrome-launcher": "2.2.0",
     "karma-qunit": "2.1.0",
     "karma-sinon": "1.0.5",
-    "clean-css-cli": "4.1.11",
-    "uglify-js": "3.4.6",
-    "less": "3.8.0",
-    "qunit": "2.6.1"
+    "clean-css-cli": "4.2.1",
+    "uglify-js": "3.4.9",
+    "less": "3.8.1",
+    "qunit": "2.6.2"
   }
 }

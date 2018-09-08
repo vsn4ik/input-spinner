@@ -1,20 +1,21 @@
-/*!
- * jquery.spinner v0.2.1 (https://vsn4ik.github.io/jquery.spinner/)
- * Copyright 2013-2016 xixilive
+/*
+ * jquery.spinner
+ * https://github.com/vsn4ik/jquery.spinner
+ * Copyright Vasilii A., 2015–2018
+ * Copyright xixilive, 2013–2015
  * Licensed under the MIT license
  */
+
 'use strict';
 
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module
     define(['jquery'], factory);
-  }
-  else if (typeof exports === 'object') {
+  } else if (typeof exports === 'object') {
     // Node/CommonJS
     module.exports = factory(require('jquery'));
-  }
-  else {
+  } else {
     // Browser globals
     factory(jQuery);
   }
@@ -134,7 +135,7 @@
     this.$spinning = this.$el.find('[data-spin="spinner"]');
 
     if (this.$spinning.length === 0) {
-      this.$spinning = this.$el.find(':input[type="text"]');
+      this.$spinning = this.$el.find('input[type="text"]');
     }
 
     options = $.extend({}, options, this.$spinning.data());
@@ -207,8 +208,7 @@
     bindHandler: function(t, fn) {
       if ($.isFunction(fn)) {
         this.$spinning.on(t, fn);
-      }
-      else {
+      } else {
         this.$spinning.off(t);
       }
     },
@@ -231,11 +231,9 @@
       }
       if (options === 'delay' || options === 'changed' || options === 'changing') {
         data[options](value);
-      }
-      else if (options === 'step' && value) {
+      } else if (options === 'step' && value) {
         data.spinning.step = value;
-      }
-      else if (options === 'spin' && value) {
+      } else if (options === 'spin' && value) {
         data.spinning.spin(value);
       }
     });

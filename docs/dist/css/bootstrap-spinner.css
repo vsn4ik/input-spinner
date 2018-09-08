@@ -11,8 +11,8 @@
 .spinner.input-group .input-group-addon .spin-down:hover {
   color: #555;
 }
-.spinner.input-group .input-group-addon .spin-up .fa,
-.spinner.input-group .input-group-addon .spin-down .fa {
+.spinner.input-group .input-group-addon .spin-up .fas,
+.spinner.input-group .input-group-addon .spin-down .fas {
   margin-top: -8px;
   vertical-align: middle;
 }
@@ -35,8 +35,8 @@
 .spinner.input-group.input-group-sm .input-group-addon .spin-down {
   height: 8px;
 }
-.spinner.input-group.input-group-sm .input-group-addon .spin-up .fa,
-.spinner.input-group.input-group-sm .input-group-addon .spin-down .fa {
+.spinner.input-group.input-group-sm .input-group-addon .spin-up .fas,
+.spinner.input-group.input-group-sm .input-group-addon .spin-down .fas {
   margin-top: -12px;
 }
 .spinner.input-group.input-group-sm .input-group-addon .spin-up .glyphicon,
@@ -49,8 +49,8 @@
   height: 12px;
   width: 12px;
 }
-.spinner.input-group.input-group-lg .input-group-addon .spin-up .fa,
-.spinner.input-group.input-group-lg .input-group-addon .spin-down .fa {
+.spinner.input-group.input-group-lg .input-group-addon .spin-up .fas,
+.spinner.input-group.input-group-lg .input-group-addon .spin-down .fas {
   margin-top: -16px;
 }
 .spinner.input-group.input-group-lg .input-group-addon .spin-up .glyphicon,
@@ -58,4 +58,3 @@
   font-size: 12px;
   top: -6px;
 }
-/*# sourceMappingURL=bootstrap-spinner.css.map */
