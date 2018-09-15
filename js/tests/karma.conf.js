@@ -26,7 +26,7 @@ module.exports = function(config) {
       'karma-chrome-launcher'
     ],
     files: [
-      'js/tests/vendor/jquery-3.3.1.slim.js',
+      'node_modules/jquery/dist/jquery.slim.js',
       'js/jquery.spinner.js',
       'js/tests/unit/unit.js'
     ],
