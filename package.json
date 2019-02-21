@@ -36,17 +36,17 @@
     "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/css/bootstrap-spinner.min.css dist/css/bootstrap-spinner.css",
     "js": "npm run js-compile; npm run js-minify",
     "js-compile": "mkdir -p dist/js; cp -rf js/*.js dist/js/",
-    "js-minify": "uglifyjs --compress --output dist/js/$npm_package_name.min.js dist/js/$npm_package_name.js",
+    "js-minify": "terser --compress --output dist/js/$npm_package_name.min.js dist/js/$npm_package_name.js",
     "release-zip": "cd dist/ && zip -r9 $npm_package_name-$npm_package_version-dist.zip * && mv $npm_package_name-$npm_package_version-dist.zip .."
   },
   "devDependencies": {
-    "puppeteer": "1.11.0",
+    "puppeteer": "1.12.2",
     "karma": "4.0.0",
     "karma-chrome-launcher": "2.2.0",
     "karma-qunit": "2.1.0",
     "karma-sinon": "1.0.5",
     "clean-css-cli": "4.2.1",
-    "uglify-js": "3.4.9",
+    "terser": "3.16.1",
     "less": "3.9.0",
     "jquery": "3.3.1",
     "qunit": "2.9.1"
