@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1.1.0
+        uses: actions/setup-node@master
         with:
           version: 12
 

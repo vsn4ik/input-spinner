@@ -20,13 +20,13 @@
     factory(jQuery);
   }
 })(function($) {
-  var spinningTimer;
   var Spinner;
   var Spinning = function($element, options) {
     this.$el = $element;
     this.options = $.extend({}, Spinning.rules.defaults, Spinning.rules[options.rule] || {}, options);
     this.min = Number(this.options.min) || 0;
     this.max = Number(this.options.max) || 0;
+    this.spinningTimer = null;
 
     this.$el.on({
       'focus.spinner': $.proxy(function(e) {
@@ -99,8 +99,8 @@
         this.$el.trigger('changing.spinner', [this.value(), this.oldValue]);
 
         // lazy changed.spinner
-        clearTimeout(spinningTimer);
-        spinningTimer = setTimeout($.proxy(function() {
+        clearTimeout(this.spinningTimer);
+        this.spinningTimer = setTimeout($.proxy(function() {
           this.$el.trigger('changed.spinner', [this.value(), this.oldValue]);
         }, this), Spinner.delay);
       }

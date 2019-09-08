@@ -13,7 +13,7 @@
 }
 .spinner.input-group .input-group-addon .spin-up .fas,
 .spinner.input-group .input-group-addon .spin-down .fas {
-  margin-top: -8px;
+  margin-top: -6px;
   vertical-align: middle;
 }
 .spinner.input-group .input-group-addon .spin-up .glyphicon,
@@ -37,7 +37,7 @@
 }
 .spinner.input-group.input-group-sm .input-group-addon .spin-up .fas,
 .spinner.input-group.input-group-sm .input-group-addon .spin-down .fas {
-  margin-top: -12px;
+  margin-top: -10px;
 }
 .spinner.input-group.input-group-sm .input-group-addon .spin-up .glyphicon,
 .spinner.input-group.input-group-sm .input-group-addon .spin-down .glyphicon {
