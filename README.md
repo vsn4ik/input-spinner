@@ -1,7 +1,7 @@
 # [jQuery Spinner](https://vsn4ik.github.io/jquery.spinner/)
 
-[![License](https://img.shields.io/npm/l/jquery.spinner.svg)][license]
-![Build Status](https://action-badges.now.sh/vsn4ik/jquery.spinner)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Build Status](https://github.com/vsn4ik/jquery.spinner/workflows/Test/badge.svg)](https://github.com/vsn4ik/jquery.spinner/actions?workflow=Test)
 [![devDependency Status](https://david-dm.org/vsn4ik/jquery.spinner/dev-status.svg)](https://david-dm.org/vsn4ik/jquery.spinner?type=dev)
 
 
