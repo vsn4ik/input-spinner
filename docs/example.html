@@ -6,24 +6,24 @@
     <title>Example</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="dist/css/bootstrap-spinner.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+    <link rel="stylesheet" href="dist/input-spinner.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.js"></script>
-    <script src="dist/js/jquery.spinner.js"></script>
+    <script src="dist/input-spinner.js"></script>
     <script>
-    $(function() {
-      $('#customize-spinner').spinner('changed', function(e, newVal, oldVal) {
-        $('#old-val').text(oldVal);
-        $('#new-val').text(newVal);
+      document.addEventListener('DOMContentLoaded', function() {
+        $('#customize-spinner').spinner('changed', function(e, newVal, oldVal) {
+          $('#old-val').text(oldVal);
+          $('#new-val').text(newVal);
+        });
       });
-    });
     </script>
   </head>
   <body>
     <div class="container">
-      <h1>Examples for jQuery spinner</h1>
+      <h1>Examples</h1>
       <ul class="muted">
         <li>Arrow-up for increment</li>
         <li>Arrow-down for decrement</li>

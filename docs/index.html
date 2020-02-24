@@ -3,54 +3,53 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>jQuery.spinner</title>
+    <title>Input Spinner</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="dist/css/bootstrap-spinner.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+    <link rel="stylesheet" href="dist/input-spinner.css">
     <link rel="stylesheet" href="assets/css/old.css">
     <link rel="stylesheet" href="assets/css/docs.css">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="dist/js/jquery.spinner.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.js"></script>
+    <script src="dist/input-spinner.min.js"></script>
     <script>
-    $(function() {
-      $('#customize-spinner').spinner('changed', function(e, newVal, oldVal) {
-        $('#old-val').text(oldVal);
-        $('#new-val').text(newVal);
-      });
+      document.addEventListener('DOMContentLoaded', function() {
+        $('#customize-spinner').spinner('changed', function(event, newVal, oldVal) {
+          $('#old-val').text(oldVal);
+          $('#new-val').text(newVal);
+        });
 
-      $('[data-trigger="spinner"]').spinner('changing', function(e, newVal, oldVal) {
-        var well = $(e.currentTarget).closest('.well');
-        $('small', well).text("Old = " + oldVal + ", New = " + newVal);
-      });
+        $('[data-trigger="spinner"]').spinner('changing', function(event, newVal, oldVal) {
+          $(event.currentTarget).closest('.well').find('small').text('Old = ' + oldVal + ', New = ' + newVal);
+        });
 
-      $('#step-spinner').spinner({
-        step: function(dir) {
-          if ((this.oldValue === 1 && dir === 'down') || (this.oldValue === -1 && dir === 'up')) {
-            return 2;
+        $('#step-spinner').spinner({
+          step: function(dir) {
+            if ((this.oldValue === 1 && dir === 'down') || (this.oldValue === -1 && dir === 'up')) {
+              return 2;
+            }
+            return 1;
           }
-          return 1;
-        }
+        });
       });
-    });
     </script>
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">jQuery.spinner</h1>
-        <p class="header">A Number-Spinner based-on jQuery, Support Keyboard operations and continuous changing.</p>
+        <h1 class="header">Input Spinner</h1>
+        <p class="header">A Number-Spinner, Support keyboard operations and continuous changing.</p>
 
-        <a class="btn btn-primary" href="https://github.com/vsn4ik/jquery.spinner/archive/master.zip"><i class="fas fa-download fa-lg"></i>&nbsp;Download</a>
+        <a class="btn btn-primary" href="https://github.com/vsn4ik/input-spinner/archive/master.zip"><i class="fas fa-download fa-lg"></i>&nbsp;Download</a>
         <br>
         <br>
-        <a class="btn btn-default" href="https://github.com/vsn4ik/jquery-spinner"><i class="fab fa-github fa-lg"></i>&nbsp;View On GitHub</a>
+        <a class="btn btn-default" href="https://github.com/vsn4ik/input-spinner/"><i class="fab fa-github fa-lg"></i>&nbsp;View On GitHub</a>
       </header>
 
       <section>
-        <h1>Examples of jQuery.spinner</h1>
+        <h1>Examples</h1>
         <ul class="muted">
           <li>Arrow-up for increment</li>
           <li>Arrow-down for decrement</li>

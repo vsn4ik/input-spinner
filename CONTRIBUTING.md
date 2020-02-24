@@ -1,7 +1,7 @@
 # Contributing
 
 ## Important notes
-Please don't edit files in the `dist` subdirectory as they are generated via Grunt. You'll find source code in the `less` and `js` subdirectories!
+Please don't edit files in the `dist` subdirectory as they are generated via Grunt. You'll find source code in the `src` subdirectory!
 
 ### Code style
 Regarding code style like indentation and whitespace, **follow the conventions you see used in the source already.**
@@ -20,6 +20,6 @@ First, ensure that you have the latest [Node.js](https://nodejs.org) and [npm](h
 1. Add failing tests for the change you want to make. Run `npm run test` to see the tests fail.
 1. Fix stuff.
 1. Run `npm run test` to see if the tests pass. Repeat steps 2-4 until done.
-1. Open `js/tests/index.html` unit test file(s) in actual browser to ensure tests pass everywhere.
+1. Open `tests/index.html` unit test file(s) in actual browser to ensure tests pass everywhere.
 1. Update the documentation to reflect any changes.
 1. Push to your fork and submit a pull request.
