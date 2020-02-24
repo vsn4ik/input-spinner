@@ -1,16 +1,16 @@
-# [jQuery Spinner](https://vsn4ik.github.io/jquery.spinner/)
+# [Input Spinner](https://vsn4ik.github.io/input-spinner/)
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Build Status](https://github.com/vsn4ik/jquery.spinner/workflows/Test/badge.svg)](https://github.com/vsn4ik/jquery.spinner/actions?workflow=Test)
-[![devDependency Status](https://david-dm.org/vsn4ik/jquery.spinner/dev-status.svg)](https://david-dm.org/vsn4ik/jquery.spinner?type=dev)
+[![Build Status](https://github.com/vsn4ik/input-spinner/workflows/Test/badge.svg)](https://github.com/vsn4ik/input-spinner/actions?workflow=Test)
+[![devDependency Status](https://david-dm.org/vsn4ik/input-spinner/dev-status.svg)](https://david-dm.org/vsn4ik/input-spinner?type=dev)
 
 
-A Number-Spinner based-on jQuery, Support Keyboard operations and continuous changing.
+A Number-Spinner, Support keyboard operations and continuous changing.
 
 ## Basic usage, it's very simple
 ```html
 <!-- // ref javascript file -->
-<script src="dist/js/jquery.spinner.js"></script>
+<script src="dist/input-spinner.js"></script>
 
 <!-- // spinner plugin DOM -->
 <div data-trigger="spinner">
@@ -27,16 +27,16 @@ In your web page:
 
 ```html
 <script src="jquery.js"></script>
-<script src="dist/js/jquery.spinner.js"></script>
+<script src="dist/input-spinner.js"></script>
 <script>
-$("#spinner")
-  .spinner('delay', 200) //delay in ms
-  .spinner('changed', function(e, newVal, oldVal) {
-    // trigger lazed, depend on delay option.
-  })
-  .spinner('changing', function(e, newVal, oldVal) {
-    // trigger immediately
-  });
+  $('#spinner')
+    .spinner('delay', 200) //delay in ms
+    .spinner('changed', function(e, newVal, oldVal) {
+      // trigger lazed, depend on delay option.
+    })
+    .spinner('changing', function(e, newVal, oldVal) {
+      // trigger immediately
+    });
 </script>
 
 <div data-trigger="spinner" id="spinner">
@@ -89,10 +89,10 @@ Usage:
 
 ## Examples
 
-### Work with Bootstrap 3 and Font Awesome 4
+### Work with Bootstrap and Font Awesome
 
 ```html
-<link href="dist/css/bootstrap-spinner.css" rel="stylesheet">
+<link href="dist/input-spinner.css" rel="stylesheet">
 
 <div class="input-group spinner" data-trigger="spinner">
   <input type="text" class="form-control text-center" value="1" data-rule="quantity">
@@ -125,7 +125,7 @@ Usage:
 </div>
 
 <script>
-  $("#spinner").spinner('changing', function(e, newVal, oldVal) {
+  $('#spinner').spinner('changing', function(e, newVal, oldVal) {
     $('#spinner-value').html(newVal);
   });
 </script>
@@ -134,7 +134,7 @@ Usage:
 #### pass step options as a function
 ```javascript
 // To skip 0
-$("#spinner").spinner({
+$('#spinner').spinner({
   step: function(dir) {
     // 'this' references to the spinner object
     if ((this.oldValue === 1 && dir === 'down') || (this.oldValue === -1 && dir === 'up')) {
@@ -145,7 +145,7 @@ $("#spinner").spinner({
 });
 
 // or use API syntax
-$("#spinner").spinner('step', function(dir) {
+$('#spinner').spinner('step', function(dir) {
   // your logic here
 });
 ```
@@ -158,6 +158,6 @@ Copyright xixilive, 2013&ndash;2015
 
 Licensed under [the MIT License][license].
 
-[license]: https://github.com/vsn4ik/jquery.spinner/blob/master/LICENSE
-[development]: https://raw.githubusercontent.com/vsn4ik/jquery.spinner/master/dist/js/jquery.spinner.min.js
-[production]: https://raw.githubusercontent.com/vsn4ik/jquery.spinner/master/dist/js/jquery.spinner.js
+[license]: https://github.com/vsn4ik/input-spinner/blob/master/LICENSE
+[development]: https://raw.githubusercontent.com/vsn4ik/input-spinner/master/dist/input-spinner.min.js
+[production]: https://raw.githubusercontent.com/vsn4ik/input-spinner/master/dist/input-spinner.js

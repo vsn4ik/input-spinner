@@ -1,6 +1,6 @@
 /*
- * jquery.spinner
- * https://github.com/vsn4ik/jquery.spinner
+ * input-spinner
+ * https://github.com/vsn4ik/input-spinner
  * Copyright Vasilii A., 2015–2018
  * Copyright xixilive, 2013–2015
  * Licensed under the MIT license
@@ -23,32 +23,32 @@
   var Spinner;
   var Spinning = function($element, options) {
     this.$el = $element;
-    this.options = $.extend({}, Spinning.rules.defaults, Spinning.rules[options.rule] || {}, options);
+    this.options = Object.assign({}, Spinning.rules.defaults, Spinning.rules[options.rule] || {}, options);
     this.min = Number(this.options.min) || 0;
     this.max = Number(this.options.max) || 0;
     this.spinningTimer = null;
 
     this.$el.on({
-      'focus.spinner': $.proxy(function(e) {
+      'focus.spinner': (function(e) {
         e.preventDefault();
         $(document).trigger('mouseup.spinner');
         this.oldValue = this.value();
-      }, this),
-      'change.spinner': $.proxy(function(e) {
+      }).bind(this),
+      'change.spinner': (function(e) {
         e.preventDefault();
         this.value(this.$el.val());
-      }, this),
-      'keydown.spinner': $.proxy(function(e) {
+      }).bind(this),
+      'keydown.spinner': (function(e) {
         var dir = {
           38: 'up',
           40: 'down'
-        }[e.which];
+        }[e.keyCode];
 
         if (dir) {
           e.preventDefault();
           this.spin(dir);
         }
-      }, this)
+      }).bind(this)
     });
 
     //init input value
@@ -76,7 +76,7 @@
       }
 
       this.oldValue = this.value();
-      var step = $.isFunction(this.options.step) ? this.options.step.call(this, dir) : this.options.step;
+      var step = typeof this.options.step === 'function' ? this.options.step.call(this, dir) : this.options.step;
       var multipler = dir === 'up' ? 1 : -1;
 
       this.value(this.oldValue + Number(step) * multipler);
@@ -90,7 +90,7 @@
 
       var valid = this.validate(v);
       if (valid !== 0) {
-        v = (valid === -1) ? this.min : this.max;
+        v = valid === -1 ? this.min : this.max;
       }
       this.$el.val(v.toFixed(this.options.precision));
 
@@ -100,9 +100,9 @@
 
         // lazy changed.spinner
         clearTimeout(this.spinningTimer);
-        this.spinningTimer = setTimeout($.proxy(function() {
+        this.spinningTimer = setTimeout((function() {
           this.$el.trigger('changed.spinner', [this.value(), this.oldValue]);
-        }, this), Spinner.delay);
+        }).bind(this), Spinner.delay);
       }
     },
 
@@ -138,18 +138,18 @@
       this.$spinning = this.$el.find('input[type="text"]');
     }
 
-    options = $.extend({}, options, this.$spinning.data());
+    options = Object.assign({}, options, this.$spinning.data());
 
     this.spinning = new Spinning(this.$spinning, options);
 
     this.$el
-      .on('click.spinner', '[data-spin="up"], [data-spin="down"]', $.proxy(this, 'spin'))
-      .on('mousedown.spinner', '[data-spin="up"], [data-spin="down"]', $.proxy(this, 'spin'));
+      .on('click.spinner', '[data-spin="up"], [data-spin="down"]', this.spin.bind(this))
+      .on('mousedown.spinner', '[data-spin="up"], [data-spin="down"]', this.spin.bind(this));
 
-    $(document).on('mouseup.spinner', $.proxy(function() {
+    $(document).on('mouseup.spinner', (function() {
       clearTimeout(this.spinTimeout);
       clearInterval(this.spinInterval);
-    }, this));
+    }).bind(this));
 
     if (options.delay) {
       this.delay(options.delay);
@@ -178,8 +178,8 @@
           this.spinning.spin(dir);
           break;
         case 'mousedown':
-          if (e.which === 1) {
-            this.spinTimeout = setTimeout($.proxy(this, 'beginSpin', dir), 300);
+          if (e.keyCode === 1) {
+            this.spinTimeout = setTimeout(this.beginSpin.bind(this, dir), 300);
           }
           break;
       }
@@ -206,7 +206,7 @@
     },
 
     bindHandler: function(t, fn) {
-      if ($.isFunction(fn)) {
+      if (typeof fn === 'function') {
         this.$spinning.on(t, fn);
       } else {
         this.$spinning.off(t);
@@ -214,7 +214,7 @@
     },
 
     beginSpin: function(dir) {
-      this.spinInterval = setInterval($.proxy(this.spinning, 'spin', dir), 100);
+      this.spinInterval = setInterval(this.spinning.spin.bind(this.spinning, dir), 100);
     }
   };
 

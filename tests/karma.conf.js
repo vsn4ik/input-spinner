@@ -17,7 +17,7 @@ const conf = {
   //     ]
   //   }
   // },
-  basePath: '../..',
+  basePath: '..',
   colors: true,
   frameworks: [
     'qunit'
@@ -28,8 +28,8 @@ const conf = {
   ],
   files: [
     'node_modules/jquery/dist/jquery.slim.js',
-    'js/jquery.spinner.js',
-    'js/tests/unit/unit.js'
+    'src/input-spinner.js',
+    'tests/unit/unit.js'
   ],
   autoWatch: false,
   singleRun: true,
