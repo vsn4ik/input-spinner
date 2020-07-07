@@ -1,7 +1,7 @@
 {
-  "private": true,
   "name": "input-spinner",
   "version": "1.0.0",
+  "private": true,
   "description": "A Number-Spinner, Support keyboard operations and continuous changing",
   "keywords": [
     "spinner",
@@ -10,6 +10,8 @@
     "continuous"
   ],
   "homepage": "https://vsn4ik.github.io/input-spinner/",
+  "repository": "vsn4ik/input-spinner",
+  "license": "MIT",
   "author": {
     "name": "xixilive",
     "email": "xixilive@gmail.com",
@@ -21,33 +23,30 @@
       "url": "https://github.com/vsn4ik"
     }
   ],
-  "repository": "vsn4ik/input-spinner",
-  "license": "MIT",
+  "main": "dist/input-spinner.js",
   "files": [
     "dist",
     "src"
   ],
-  "main": "dist/input-spinner.js",
   "scripts": {
-    "test": "npm run css; npm run js; karma start tests/karma.conf.js",
     "css": "npm run css-compile; npm run css-minify",
     "css-compile": "lessc src/$npm_package_name.less dist/$npm_package_name.css",
     "css-minify": "cleancss --level 1 --source-map --source-map-inline-sources --output dist/$npm_package_name.min.css dist/$npm_package_name.css",
     "js": "npm run js-compile; npm run js-minify",
     "js-compile": "mkdir dist; cp -rf src/*.js dist/",
     "js-minify": "terser --compress --output dist/$npm_package_name.min.js dist/$npm_package_name.js",
-    "release-zip": "rm -rf $npm_package_name-$npm_package_version-dist && cp -r dist/ $npm_package_name-$npm_package_version-dist && zip -r9 $npm_package_name-$npm_package_version-dist.zip $npm_package_name-$npm_package_version-dist && rm -rf $npm_package_name-$npm_package_version-dist"
+    "release-zip": "rm -rf $npm_package_name-$npm_package_version-dist && cp -r dist/ $npm_package_name-$npm_package_version-dist && zip -r9 $npm_package_name-$npm_package_version-dist.zip $npm_package_name-$npm_package_version-dist && rm -rf $npm_package_name-$npm_package_version-dist",
+    "test": "npm run css; npm run js; karma start tests/karma.conf.js"
   },
   "devDependencies": {
-    "puppeteer": "3.0.2",
-    "karma": "5.0.2",
-    "karma-chrome-launcher": "3.1.0",
-    "karma-qunit": "4.0.0",
-    "karma-sinon": "1.0.5",
-    "clean-css-cli": "4.3.0",
-    "terser": "4.6.12",
-    "less": "3.11.1",
-    "jquery": "3.5.0",
-    "qunit": "2.9.3"
+    "clean-css-cli": "^4.3.0",
+    "jquery": "^3.5.1",
+    "karma": "^5.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-qunit": "^4.1.1",
+    "less": "^3.11.3",
+    "puppeteer": "^5.0.0",
+    "qunit": "^2.10.1",
+    "terser": "^4.8.0"
   }
 }

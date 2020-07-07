@@ -30,7 +30,7 @@ In your web page:
 <script src="dist/input-spinner.js"></script>
 <script>
   $('#spinner')
-    .spinner('delay', 200) //delay in ms
+    .spinner('delay', 200) // delay in ms
     .spinner('changed', function(e, newVal, oldVal) {
       // trigger lazed, depend on delay option.
     })
