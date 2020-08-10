@@ -1,3 +1,25 @@
+/* bootstrap@4 */
+.input-group.spinner .input-group-text {
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.input-group.spinner .input-group-text .spin-up,
+.input-group.spinner .input-group-text .spin-down {
+  display: flex;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #999;
+}
+.input-group.spinner .input-group-text .spin-up:hover,
+.input-group.spinner .input-group-text .spin-down:hover,
+.input-group.spinner .input-group-text .spin-up:focus,
+.input-group.spinner .input-group-text .spin-down:focus {
+  color: #555;
+}
+/* bootstrap@3 */
 .spinner.input-group .input-group-addon .spin-up,
 .spinner.input-group .input-group-addon .spin-down {
   height: 10px;

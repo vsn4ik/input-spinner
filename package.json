@@ -36,17 +36,19 @@
     "js-compile": "mkdir dist; cp -rf src/*.js dist/",
     "js-minify": "terser --compress --output dist/$npm_package_name.min.js dist/$npm_package_name.js",
     "release-zip": "rm -rf $npm_package_name-$npm_package_version-dist && cp -r dist/ $npm_package_name-$npm_package_version-dist && zip -r9 $npm_package_name-$npm_package_version-dist.zip $npm_package_name-$npm_package_version-dist && rm -rf $npm_package_name-$npm_package_version-dist",
-    "test": "npm run css; npm run js; karma start tests/karma.conf.js"
+    "test": "npm run css; npm run js; karma start tests/karma.conf.js",
+    "serve": "serve --listen 5000 --no-clipboard ./docs/"
   },
   "devDependencies": {
     "clean-css-cli": "^4.3.0",
     "jquery": "^3.5.1",
-    "karma": "^5.1.0",
+    "karma": "^5.1.1",
     "karma-chrome-launcher": "^3.1.0",
     "karma-qunit": "^4.1.1",
-    "less": "^3.11.3",
-    "puppeteer": "^5.0.0",
+    "less": "^3.12.2",
+    "puppeteer": "^5.2.1",
     "qunit": "^2.10.1",
-    "terser": "^4.8.0"
+    "terser": "^5.0.0",
+    "serve": "^11.3.2"
   }
 }

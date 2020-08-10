@@ -2,17 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Input Spinner</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
     <link rel="stylesheet" href="dist/input-spinner.css">
     <link rel="stylesheet" href="assets/css/old.css">
     <link rel="stylesheet" href="assets/css/docs.css">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.js"></script>
     <script src="dist/input-spinner.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
@@ -45,7 +45,7 @@
         <a class="btn btn-primary" href="https://github.com/vsn4ik/input-spinner/archive/master.zip"><i class="fas fa-download fa-lg"></i>&nbsp;Download</a>
         <br>
         <br>
-        <a class="btn btn-default" href="https://github.com/vsn4ik/input-spinner/"><i class="fab fa-github fa-lg"></i>&nbsp;View On GitHub</a>
+        <a class="btn btn-secondary" href="https://github.com/vsn4ik/input-spinner/"><i class="fab fa-github fa-lg"></i>&nbsp;View On GitHub</a>
       </header>
 
       <section>
@@ -60,9 +60,12 @@
           <h2>Quantity:<small class="pull-right"></small></h2>
           <div class="input-group spinner" data-trigger="spinner">
             <input type="text" class="form-control text-center" value="1" data-rule="quantity">
-            <div class="input-group-addon">
-              <a href="javascript:;" class="spin-up" data-spin="up"><i class="fas fa-caret-up"></i></a>
-              <a href="javascript:;" class="spin-down" data-spin="down"><i class="fas fa-caret-down"></i></a>
+
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <button type="button" class="spin-up" data-spin="up"><i class="fas fa-caret-up fa-sm"></i></button>
+                <button type="button" class="spin-down" data-spin="down"><i class="fas fa-caret-down fa-sm"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -71,9 +74,12 @@
           <h2>Currency:<small class="pull-right"></small></h2>
           <div class="input-group spinner" data-trigger="spinner">
             <input type="text" class="form-control text-center" value="1" data-rule="currency">
-            <div class="input-group-addon">
-              <a href="javascript:;" class="spin-up" data-spin="up"><i class="fas fa-caret-up"></i></a>
-              <a href="javascript:;" class="spin-down" data-spin="down"><i class="fas fa-caret-down"></i></a>
+
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <button type="button" class="spin-up" data-spin="up"><i class="fas fa-caret-up fa-sm"></i></button>
+                <button type="button" class="spin-down" data-spin="down"><i class="fas fa-caret-down fa-sm"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -82,9 +88,12 @@
           <h2>Percent:<small class="pull-right"></small></h2>
           <div class="input-group spinner" data-trigger="spinner">
             <input type="text" class="form-control text-center" value="1" data-rule="percent">
-            <div class="input-group-addon">
-              <a href="javascript:;" class="spin-up" data-spin="up"><i class="fas fa-caret-up"></i></a>
-              <a href="javascript:;" class="spin-down" data-spin="down"><i class="fas fa-caret-down"></i></a>
+
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <button type="button" class="spin-up" data-spin="up"><i class="fas fa-caret-up fa-sm"></i></button>
+                <button type="button" class="spin-down" data-spin="down"><i class="fas fa-caret-down fa-sm"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -93,9 +102,12 @@
           <h2>Month:<small class="pull-right"></small></h2>
           <div class="input-group spinner" data-trigger="spinner">
             <input type="text" class="form-control text-center" value="1" data-rule="month">
-            <div class="input-group-addon">
-              <a href="javascript:;" class="spin-up" data-spin="up"><i class="fas fa-caret-up"></i></a>
-              <a href="javascript:;" class="spin-down" data-spin="down"><i class="fas fa-caret-down"></i></a>
+
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <button type="button" class="spin-up" data-spin="up"><i class="fas fa-caret-up fa-sm"></i></button>
+                <button type="button" class="spin-down" data-spin="down"><i class="fas fa-caret-down fa-sm"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -104,9 +116,12 @@
           <h2>Hour:<small class="pull-right"></small></h2>
           <div class="input-group spinner" data-trigger="spinner">
             <input type="text" class="form-control text-center" value="1" data-rule="hour">
-            <div class="input-group-addon">
-              <a href="javascript:;" class="spin-up" data-spin="up"><i class="fas fa-caret-up"></i></a>
-              <a href="javascript:;" class="spin-down" data-spin="down"><i class="fas fa-caret-down"></i></a>
+
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <button type="button" class="spin-up" data-spin="up"><i class="fas fa-caret-up fa-sm"></i></button>
+                <button type="button" class="spin-down" data-spin="down"><i class="fas fa-caret-down fa-sm"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -116,9 +131,12 @@
           <h2>even number less than 200<small class="pull-right"></small></h2>
           <div class="input-group spinner" data-trigger="spinner" id="customize-spinner">
             <input type="text" class="form-control text-center" value="0" data-max="200" data-min="0" data-step="2">
-            <div class="input-group-addon">
-              <a href="javascript:;" class="spin-up" data-spin="up"><i class="fas fa-caret-up"></i></a>
-              <a href="javascript:;" class="spin-down" data-spin="down"><i class="fas fa-caret-down"></i></a>
+
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <button type="button" class="spin-up" data-spin="up"><i class="fas fa-caret-up fa-sm"></i></button>
+                <button type="button" class="spin-down" data-spin="down"><i class="fas fa-caret-down fa-sm"></i></button>
+              </div>
             </div>
           </div>
           <p>Event handler: changed</p>
@@ -132,9 +150,12 @@
           <div>To skip 0 for this example</div>
           <div class="input-group spinner" data-trigger="spinner">
             <input type="text" class="form-control text-center" value="1" data-min="-100" data-max="100" readonly>
-            <div class="input-group-addon">
-              <a href="javascript:;" class="spin-up" data-spin="up"><i class="fas fa-caret-up"></i></a>
-              <a href="javascript:;" class="spin-down" data-spin="down"><i class="fas fa-caret-down"></i></a>
+
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <button type="button" class="spin-up" data-spin="up"><i class="fas fa-caret-up fa-sm"></i></button>
+                <button type="button" class="spin-down" data-spin="down"><i class="fas fa-caret-down fa-sm"></i></button>
+              </div>
             </div>
           </div>
         </div>
