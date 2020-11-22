@@ -175,14 +175,10 @@ td {
 header {
   background-color: #171717;
   color: #FDFDFB;
-  width:270px;
-  float:left;
-  position:fixed;
+  width: 270px;
+  float: left;
+  position: fixed;
   border: 1px solid #000;
-  -webkit-border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  -moz-border-radius-topright: 4px;
-  -moz-border-radius-bottomright: 4px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   padding: 34px 25px 22px 50px;
@@ -221,11 +217,6 @@ header li {
   padding: 6px 6px 6px 7px;
 
   background: #AF0011;
-  background: -moz-linear-gradient(top, #AF0011 0%, #820011 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#dddddd));
-  background: -webkit-linear-gradient(top, #AF0011 0%,#820011 100%);
-  background: -o-linear-gradient(top, #AF0011 0%,#820011 100%);
-  background: -ms-linear-gradient(top, #AF0011 0%,#820011 100%);
   background: linear-gradient(top, #AF0011 0%,#820011 100%);
 
   border-radius: 4px;
@@ -237,11 +228,6 @@ header li {
 
 header li:hover {
   background: #C3001D;
-  background: -moz-linear-gradient(top, #C3001D 0%, #950119 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#dddddd));
-  background: -webkit-linear-gradient(top, #C3001D 0%,#950119 100%);
-  background: -o-linear-gradient(top, #C3001D 0%,#950119 100%);
-  background: -ms-linear-gradient(top, #C3001D 0%,#950119 100%);
   background: linear-gradient(top, #C3001D 0%,#950119 100%);
 }
 
@@ -267,55 +253,51 @@ footer {
 
 @media print, screen and (max-width: 960px) {
   div.wrapper {
-    width:auto;
-    margin:0;
+    width: auto;
+    margin: 0;
   }
 
   header, section, footer {
-    float:none;
-    position:static;
-    width:auto;
+    float: none;
+    position: static;
+    width: auto;
   }
 
   footer {
     border-top: 1px solid #ccc;
-    margin:0 84px 0 50px;
-    padding:0;
-  }
-
-  header {
-    padding-right:320px;
+    margin: 0 84px 0 50px;
+    padding: 0;
   }
 
   section {
-    padding:20px 84px 20px 50px;
-    margin:0 0 20px;
+    padding: 20px 84px 20px 50px;
+    margin: 0 0 20px;
   }
 
   header a small {
-    display:inline;
+    display: inline;
   }
 
   header ul {
-    position:absolute;
-    right:130px;
-    top:84px;
+    position: absolute;
+    right: 130px;
+    top: 84px;
   }
 }
 
 @media print, screen and (max-width: 720px) {
   body {
-    word-wrap:break-word;
+    word-wrap: break-word;
   }
 
   header {
-    padding:10px 20px 0;
+    padding: 20px;
     margin-right: 0;
   }
 
   section {
-    padding:10px 0 10px 20px;
-    margin:0 0 30px;
+    padding: 10px 0 10px 20px;
+    margin: 0 0 30px;
   }
 
   footer {
@@ -329,7 +311,7 @@ footer {
 
 @media print, screen and (max-width: 480px) {
   header ul li.download {
-    display:none;
+    display: none;
   }
 
   footer {
@@ -343,8 +325,8 @@ footer {
 
 @media print {
   body {
-    padding:0.4in;
-    font-size:12pt;
-    color:#444;
+    padding: 0.4in;
+    font-size: 12pt;
+    color: #444;
   }
 }

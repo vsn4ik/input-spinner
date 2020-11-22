@@ -31,7 +31,7 @@
     this.$el.on({
       'focus.spinner': (function(e) {
         e.preventDefault();
-        $(document).trigger('mouseup.spinner');
+        $(this.$el).trigger('mouseup.spinner');
         this.oldValue = this.value();
       }).bind(this),
       'change.spinner': (function(e) {
@@ -144,12 +144,8 @@
 
     this.$el
       .on('click.spinner', '[data-spin="up"], [data-spin="down"]', this.spin.bind(this))
-      .on('mousedown.spinner', '[data-spin="up"], [data-spin="down"]', this.spin.bind(this));
-
-    $(document).on('mouseup.spinner', (function() {
-      clearTimeout(this.spinTimeout);
-      clearInterval(this.spinInterval);
-    }).bind(this));
+      .on('mousedown.spinner', '[data-spin="up"], [data-spin="down"]', this.spin.bind(this))
+      .on('mouseup.spinner', '[data-spin="up"], [data-spin="down"]', this.spin.bind(this));
 
     if (options.delay) {
       this.delay(options.delay);
@@ -181,6 +177,10 @@
           if (e.keyCode === 1) {
             this.spinTimeout = setTimeout(this.beginSpin.bind(this, dir), 300);
           }
+          break;
+        case 'mouseup':
+          clearTimeout(this.spinTimeout);
+          clearInterval(this.spinInterval);
           break;
       }
     },
