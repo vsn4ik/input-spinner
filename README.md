@@ -1,8 +1,7 @@
 # [Input Spinner](https://vsn4ik.github.io/input-spinner/)
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Build Status](https://github.com/vsn4ik/input-spinner/workflows/Test/badge.svg)](https://github.com/vsn4ik/input-spinner/actions?workflow=Test)
-[![devDependency Status](https://david-dm.org/vsn4ik/input-spinner/dev-status.svg)](https://david-dm.org/vsn4ik/input-spinner?type=dev)
+[![Build Status](https://github.com/vsn4ik/input-spinner/actions/workflows/test.yml/badge.svg)](https://github.com/vsn4ik/input-spinner/actions/workflows/test.yml)
 
 
 A Number-Spinner, Support keyboard operations and continuous changing.
