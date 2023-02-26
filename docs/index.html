@@ -11,30 +11,10 @@
     <link rel="stylesheet" href="assets/css/old.css">
     <link rel="stylesheet" href="assets/css/docs.css">
 
-    <script src="https://code.jquery.com/jquery-3.6.3.slim.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.js"></script>
-    <script src="dist/input-spinner.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        $('#customize-spinner').spinner('changed', function(event, newVal, oldVal) {
-          $('#old-val').text(oldVal);
-          $('#new-val').text(newVal);
-        });
-
-        $('[data-trigger="spinner"]').spinner('changing', function(event, newVal, oldVal) {
-          $(event.currentTarget).closest('.well').find('small').text('Old = ' + oldVal + ', New = ' + newVal);
-        });
-
-        $('#step-spinner').spinner({
-          step: function(dir) {
-            if ((this.oldValue === 1 && dir === 'down') || (this.oldValue === -1 && dir === 'up')) {
-              return 2;
-            }
-            return 1;
-          }
-        });
-      });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.js" defer></script>
+    <script src="dist/input-spinner.js" defer></script>
+    <script src="assets/js/docs.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
@@ -42,9 +22,26 @@
         <h1 class="header">Input Spinner</h1>
         <p class="header">A Number-Spinner, Support keyboard operations and continuous changing.</p>
 
-        <div class="d-flex flex-wrap gap-2">
-          <a class="btn btn-primary" href="https://github.com/vsn4ik/input-spinner/archive/master.zip"><i class="fas fa-download fa-lg"></i>&nbsp;Download</a>
-          <a class="btn btn-secondary" href="https://github.com/vsn4ik/input-spinner/"><i class="fab fa-github fa-lg"></i>&nbsp;View On GitHub</a>
+        <div class="btn-toolbar gap-2">
+          <a class="btn btn-primary d-flex align-items-center" href="https://github.com/vsn4ik/input-spinner/archive/master.zip" download>
+            <span class="fas fa-download mr-1"></span>
+            <span>Download</span>
+          </a>
+      
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <a class="btn btn-secondary d-flex align-items-center" href="https://github.com/vsn4ik/input-spinner/">
+                <span class="fab fa-github mr-1"></span>
+                View on GitHub
+              </a>
+            </div>
+      
+            <div class="input-group-append">
+              <div class="js-stargazers-count stargazers-count input-group-text bg-white d-flex align-items-center">
+                <span class="fas fa-star mr-1"></span>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 

@@ -26,12 +26,10 @@ time, mark, audio, video {
 /* Base text styles */
 
 body {
-  padding: 10px 50px 0 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #232323;
   background-color: #FBFAF7;
-  margin: 0;
   line-height: 1.8em;
   -webkit-font-smoothing: antialiased;
 }
@@ -166,7 +164,9 @@ td {
 
 /* Wrapper */
 .wrapper {
-  width: 960px;
+  display: flex;
+  align-items: baseline;
+  /* width: 960px; */
 }
 
 
@@ -175,9 +175,9 @@ td {
 header {
   background-color: #171717;
   color: #FDFDFB;
-  width: 270px;
-  float: left;
-  position: fixed;
+  width: 320px;
+  position: sticky;
+  top: 30px;
   border: 1px solid #000;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -236,37 +236,17 @@ header li:hover {
 
 section {
   width: 650px;
-  float: right;
   padding-bottom: 50px;
-}
-
-
-/* Footer */
-
-footer {
-  width: 170px;
-  float: left;
-  position: fixed;
-  bottom: 10px;
-  padding-left: 50px;
 }
 
 @media print, screen and (max-width: 960px) {
   div.wrapper {
-    width: auto;
-    margin: 0;
+    flex-direction: column;
   }
 
-  header, section, footer {
-    float: none;
+  header, section {
     position: static;
     width: auto;
-  }
-
-  footer {
-    border-top: 1px solid #ccc;
-    margin: 0 84px 0 50px;
-    padding: 0;
   }
 
   section {
@@ -300,10 +280,6 @@ footer {
     margin: 0 0 30px;
   }
 
-  footer {
-    margin: 0 0 0 30px;
-  }
-
   header ul, header p.view {
     position: static;
   }
@@ -312,14 +288,6 @@ footer {
 @media print, screen and (max-width: 480px) {
   header ul li.download {
     display: none;
-  }
-
-  footer {
-    margin: 0 0 0 20px;
-  }
-
-  footer a {
-    display: block;
   }
 }
 

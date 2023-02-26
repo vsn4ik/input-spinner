@@ -1,3 +1,18 @@
 .gap-2 {
   gap: 0.5rem;
 }
+
+@property --stargazers {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.stargazers-count {
+  transition: --stargazers 1s;
+  counter-reset: stargazers var(--stargazers);
+}
+
+.stargazers-count::after {
+  content: counter(stargazers);
+}
